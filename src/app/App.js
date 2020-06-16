@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import HomePageContainer from "../components/containers/HomePageContainer";
 import NavBarContainer from "../components/containers/NavBarContainer";
+import RoutesContainer from "../components/routes/RoutesContainer";
 function App() {
   return (
     <div className="whole-page">
       <NavBarContainer />
-      <HomePageContainer />
+      <RoutesContainer />
     </div>
   );
 }

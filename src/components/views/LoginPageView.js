@@ -1,13 +1,18 @@
 import React from "react";
-import "./styles/LoginPageView";
+import "./styles/LoginPageView.css";
 
 const LoginPageView = () => {
   return (
-    <div className="login-page">
-      <input type="text">Username: </input>
-      <input type="text">Password: </input>
+    <form className="center">
+      <div className="text-field">
+        Username: <input type="text" className="input-field" />
+      </div>
+      <div className="text-field">
+        Password:
+        <input type="text" className="input-field" />
+      </div>
       <button className="login-button">Login</button>
-    </div>
+    </form>
   );
 };
 

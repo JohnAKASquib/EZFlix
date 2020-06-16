@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 const NavBarView = () => {
   return (
     <div className="nav-bar">
+      <Link to={`/`}>
+        <button className="buttons">Home</button>
+      </Link>
       <Link to={`/login`}>
         <button className="buttons">Login</button>
       </Link>

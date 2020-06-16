@@ -1,10 +1,13 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import {
-  HomePageContainer,
-  LoginPageContainer,
-  SignUpPageContainer,
-} from "../containers";
+// {*/import
+//   HomePageContainer,
+//   LoginPageContainer,
+//   SignUpPageContainer,
+// from "../containers";*/}
+import HomePageContainer from "../containers/HomePageContainer";
+import LoginPageContainer from "../containers/LoginPageContainer";
+import SignUpPageContainer from "../containers/SignUpPageContainer";
 const RoutesView = () => {
   return (
     <Switch>
