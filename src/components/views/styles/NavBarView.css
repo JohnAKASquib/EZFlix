@@ -1,0 +1,18 @@
+.nav-bar {
+  background-color: darkslategray;
+  align-items: flex-start;
+}
+
+.buttons {
+  border-radius: 5px;
+  border-color: orange;
+  background-color: orange;
+  padding: 1rem;
+  margin: 1rem;
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.buttons:hover {
+  background-color: yellow;
+}
