@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HomePageView from "../views/HomePageView";
 import { connect } from "react-redux";
 import { fetchAllMoviesThunk } from "../../thunks";
-import SearchBarContainer from "./SearchBarContainer";
+
 
 class HomePageContainer extends Component {
   componentDidMount() {
@@ -13,7 +13,6 @@ class HomePageContainer extends Component {
   render() {
     return (
       <>
-        <SearchBarContainer />
         <HomePageView allMovies={this.props.allMovies} />;
       </>
     );
