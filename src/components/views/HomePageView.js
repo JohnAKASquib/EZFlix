@@ -1,14 +1,16 @@
 import React from "react";
+import "./styles/HomePageView.css"
 
 const HomePageView = (props) => {
   return (
-    <div className="container">
-      <h3 className="lead">Movies</h3>
+    <div className="home-page">
+      <h1 className="lead">Trending Movies</h1>
+    <div className="container">      
       {props.allMovies.map((movie) => (
         <div
           className="card text-center mt-5 mb-5"
           key={movie.id}
-          style={{ width: 45 + "rem" }}
+          style={{ width: 30 + "rem" }}
         >
           <div className="card-header">
             <h3>{movie.title}</h3>
@@ -16,7 +18,7 @@ const HomePageView = (props) => {
           <div className="card-body">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              width="200px"
+              width="150px"
               alt={movie.title}
             />
             <p>{movie.overview}</p>
@@ -26,6 +28,7 @@ const HomePageView = (props) => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.home-page {
+    text-align: left;
+    background-color: thistle;   
+}
+
+.lead {
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.container {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(50px, auto);
+}

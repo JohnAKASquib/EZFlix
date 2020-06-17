@@ -1,6 +1,13 @@
+.nav-text {
+  text-align: center;
+  background-color: teal;
+  font-style: oblique;
+  font-weight: bolder;
+}
 .nav-bar {
   background-color: darkslategray;
   align-items: flex-start;
+  text-align: left;
 }
 
 .buttons {
