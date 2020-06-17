@@ -1,21 +1,42 @@
 import React from "react";
 
-const SignUpPageView = () => {
+const SignUpPageView = (props) => {
   return (
-    <form className="center">
-      <div className="text-field">
-        Username: <input type="text" className="input-field" />
-      </div>
-      <div className="text-field">
-        Password:
-        <input type="text" className="input-field" />
-      </div>
-      <div className="text-field">
-        Confirm Password:
-        <input type="text" className="input-field" />
-      </div>
-      <button className="login-button">Sign Up</button>
-    </form>
+    <div>
+      {props.loggedIn ? `The current logged in user is: ${props.userEmail}` : ""}
+      <form className="center" onSubmit={props.handleSubmit}>
+        <p className="lead">Passwords must be at least 6 characters</p>
+        <div className="text-field">
+          Email:
+          <input
+            type="email"
+            className="input-field"
+            name="email"
+            onChange={props.handleChange}
+          />
+        </div>
+        <div className="text-field">
+          Password:
+          <input
+            type="password"
+            className="input-field"
+            name="password"
+            onChange={props.handleChange}
+          />
+        </div>
+        <div className="text-field">
+          Confirm Password:
+          <input
+            type="password"
+            className="input-field"
+            name="confirmPassword"
+            onChange={props.handleChange}
+          />
+        </div>
+        {props.error && props.error.response && <div> {props.error.response.data} </div>}
+        <button className="login-button">Sign Up</button>
+      </form>
+    </div>
   );
 };
 
