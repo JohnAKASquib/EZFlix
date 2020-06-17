@@ -1,0 +1,28 @@
+.home-page {
+    text-align: left;
+    background-color: rgb(100, 99, 99);   
+}
+
+.lead {
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.container {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    grid-auto-rows: minmax(50px, auto);
+    
+}
+
+.container :hover {
+    width: 100%;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}

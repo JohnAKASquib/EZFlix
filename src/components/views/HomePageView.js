@@ -1,31 +1,35 @@
 import React from "react";
+import "./styles/HomePageView.css"
+import 'bootstrap/dist/css/bootstrap.css';
 
 const HomePageView = (props) => {
   return (
-    <div className="container">
-      <h3 className="lead">Movies</h3>
+    <div className="home-page">
+      <h1 className="lead">Trending Movies</h1>
+    <div className="container">      
       {props.allMovies.map((movie) => (
         <div
           className="card text-center mt-5 mb-5"
           key={movie.id}
-          style={{ width: 45 + "rem" }}
+          style={{ width: 28.5 + "rem" }}
         >
           <div className="card-header">
-            <h3>{movie.title}</h3>
+          <h3>{movie.title ? movie.title : movie.name}</h3>
           </div>
           <div className="card-body">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              width="200px"
+              width="150px"
               alt={movie.title}
             />
             <p>{movie.overview}</p>
           </div>
           <div className="card-footer text-muted">
-            <p>{movie.release_date}</p>
+            <p>{movie.release_date ? movie.release_date : movie.first_air_date}</p>
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };
