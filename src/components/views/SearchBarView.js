@@ -11,12 +11,12 @@ const SearchBarView = (props) => {
           for="exampleFormControlSelect1"
           style={{ color: "white", paddingRight: "12px" }}
         >
-          Search by Genre{" "}
+          Search by Genre
         </label>
         <select
           class="form-control"
           id="exampleFormControlSelect1"
-          style={{ paddingRight: "12px" }}
+          style={{ marginRight: "12px" }}
           onChange={props.onGenreChange}
         >
           <option value=""> </option>
