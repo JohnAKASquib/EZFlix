@@ -1,5 +1,5 @@
 import React from "react";
-
+import 'bootstrap/dist/css/bootstrap.css';
 const HomePageView = (props) => {
   return (
     <div className="container">

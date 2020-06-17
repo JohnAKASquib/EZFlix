@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/LoginPageView.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const LoginPageView = () => {
   return (
