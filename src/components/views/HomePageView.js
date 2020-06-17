@@ -13,7 +13,7 @@ const HomePageView = (props) => {
           style={{ width: 28.5 + "rem" }}
         >
           <div className="card-header">
-            <h3>{movie.title}</h3>
+          <h3>{movie.title ? movie.title : movie.name}</h3>
           </div>
           <div className="card-body">
             <img
@@ -24,7 +24,7 @@ const HomePageView = (props) => {
             <p>{movie.overview}</p>
           </div>
           <div className="card-footer text-muted">
-            <p>{movie.release_date}</p>
+            <p>{movie.release_date ? movie.release_date : movie.first_air_date}</p>
           </div>
         </div>
       ))}
