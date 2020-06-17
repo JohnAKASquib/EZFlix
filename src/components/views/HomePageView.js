@@ -10,7 +10,7 @@ const HomePageView = (props) => {
         <div
           className="card text-center mt-5 mb-5"
           key={movie.id}
-          style={{ width: 30 + "rem" }}
+          style={{ width: 28.5 + "rem" }}
         >
           <div className="card-header">
             <h3>{movie.title}</h3>
