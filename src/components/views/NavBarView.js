@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/NavBarView.css";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
+import SearchBarView from "./SearchBarView";
 
 const NavBarView = () => {
   return (
@@ -23,12 +24,10 @@ const NavBarView = () => {
           </li>
         </Link>
       </ul>
-      <Link to ={`/search`}>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2 float-right" type="search" placeholder="Search" aria-label="Search"></input>
-            <button class="btn btn-outline-light float-right" type="submit">Search</button>
-          </form>
-        </Link>
+      <form class="form-inline my-2 my-lg-0 float-right">
+        <SearchBarView />
+      </form>
+      
       
     </nav>
   );
