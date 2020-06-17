@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HomePageView from "../views/HomePageView";
 import { connect } from "react-redux";
 import { fetchAllMoviesThunk } from "../../thunks";
+import SearchBarContainer from "./SearchBarContainer";
 
 class HomePageContainer extends Component {
   componentDidMount() {
@@ -10,22 +11,25 @@ class HomePageContainer extends Component {
   }
 
   render() {
-    return <HomePageView 
-        allMovies={this.props.allMovies}
-      />;
+    return (
+      <>
+        <SearchBarContainer />
+        <HomePageView allMovies={this.props.allMovies} />;
+      </>
+    );
   }
 }
 
 const mapState = (state) => {
-    return {
-        allMovies: state.allMovies,    
-    }
-}
+  return {
+    allMovies: state.allMovies,
+  };
+};
 
 const mapDispatch = (dispatch) => {
   return {
     fetchAllMovies: () => dispatch(fetchAllMoviesThunk()),
-  }
-}
+  };
+};
 
 export default connect(mapState, mapDispatch)(HomePageContainer);
