@@ -28,12 +28,14 @@ class SearchBarContainer extends Component {
     console.log(
       "inside of handle term change the search term is " + e.target.value
     );
+    console.log(API_KEY);
     this.setState({
       searchTerm: e.target.value,
     });
     console.log(wholeURL);
   };
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     console.log(wholeURL + this.state.searchTerm);
     this.props.searchForMovies(wholeURL + this.state.searchTerm);
   };

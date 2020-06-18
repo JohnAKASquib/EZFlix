@@ -11,6 +11,13 @@ const fetchAllMovies = (movies) => {
   };
 };
 
+const searchMovies=(movies)=>{
+  return{
+    type:"SEARCH_MOVIES",
+    payload: movies,
+  }
+}
+
 // THUNKS
 export const fetchAllMoviesThunk = () => (dispatch) => {
   return axios
@@ -38,6 +45,7 @@ const reducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_ALL_MOVIES:
       return action.payload;
+      case SEARCH_MOVIES
     default:
       return state;
   }
