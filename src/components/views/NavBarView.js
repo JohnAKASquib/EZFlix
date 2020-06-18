@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/NavBarView.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import SearchBarView from "./SearchBarView";
+import SearchBarContainer from "../containers/SearchBarContainer";
 
 const NavBarView = (props) => {
   console.log(props.loggedInUser);
@@ -48,8 +48,8 @@ const NavBarView = (props) => {
         </Link>
         {buttons}
       </ul>
-      <form className="form-inline my-2 my-lg-0 float-right">
-        <SearchBarView />
+      <form class="form-inline my-2 my-lg-0 float-right">
+        <SearchBarContainer />
       </form>
     </nav>
   );

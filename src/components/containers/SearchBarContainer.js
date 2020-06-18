@@ -21,22 +21,23 @@ class SearchBarContainer extends Component {
     this.setState({ genreId: e.target.value });
     console.log("e target value is = " + e.target.value);
     console.log(
-      "inside of handle genre change the genre term is now" + this.state.genreId
+      "inside of handle genre change the genre id is now" + this.state.genreId
     );
   };
-  handleTermChange = (searchTerm) => {
+  handleTermChange = (e) => {
     console.log(
-      "inside of handle term change the search term is " +
-        searchTerm.target.value
+      "inside of handle term change the search term is " + e.target.value
     );
+    //console.log(API_KEY);
     this.setState({
-      searchTerm: searchTerm.target.value,
+      searchTerm: e.target.value,
     });
-    console.log(wholeURL);
+    // console.log(wholeURL);
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.searchForMovies(this.state.wholeURL + this.state.searchTerm);
+    //  console.log(wholeURL + this.state.searchTerm);
+    this.props.searchForMovies(this.state.searchTerm);
   };
 
   render() {
@@ -59,7 +60,7 @@ const mapState = (state) => {
 //map dispatch to props
 const mapDispatch = (dispatch) => {
   return {
-    searchForMovies: (url) => dispatch(searchForMoviesThunk(url)),
+    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm)),
   };
 };
 

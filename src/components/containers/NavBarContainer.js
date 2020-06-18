@@ -17,7 +17,6 @@ class NavBarContainer extends Component {
           loggedInUser={this.props.loggedInUser}
           handleLogout={this.handleLogout}
         />
-        <SearchBarView />
       </>
     );
   }
