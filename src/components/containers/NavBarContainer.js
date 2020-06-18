@@ -13,7 +13,7 @@ class NavBarContainer extends Component {
     return (
       <>
         <NavBarView
-          // isLoggedIn={this.props.isLoggedIn}
+          isLoggedIn={this.props.isLoggedIn}
           loggedInUser={this.props.loggedInUser}
           handleLogout={this.handleLogout}
         />
@@ -25,7 +25,7 @@ class NavBarContainer extends Component {
 
 const mapState = (state) => {
   return {
-    //isLoggedIn: !!state.user.id,
+    isLoggedIn: !!state.user.id,
     loggedInUser: state.user,
   };
 };

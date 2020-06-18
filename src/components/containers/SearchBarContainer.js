@@ -34,7 +34,8 @@ class SearchBarContainer extends Component {
     });
     console.log(wholeURL);
   };
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.props.searchForMovies(this.state.wholeURL + this.state.searchTerm);
   };
 
