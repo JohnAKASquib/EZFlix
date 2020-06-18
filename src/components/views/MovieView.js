@@ -12,7 +12,7 @@ const MovieView = (props) => {
            >
               <div className="card-header1">
                 <h3>{props.movie.title ? props.movie.title : props.movie.name}</h3>
-                <button className="btn btn-primary">Add to Favorites</button>
+                <button className="btn btn-primary" onClick={() => props.handleSubmit(props.movie.id)}>Add to Favorites</button>
                 <pre></pre>
                   </div>
                     <div className="card-body1-center">
