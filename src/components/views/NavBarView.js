@@ -9,11 +9,20 @@ const NavBarView = (props) => {
   let buttons;
   if (props.isLoggedIn) {
     buttons = (
-      <li className="nav-item">
-        <a className="nav-link" onClick={props.handleLogout}>
-          Logout
-        </a>
-      </li>
+      <>
+        <li className="nav-item">
+          <a className="nav-link" onClick={props.handleLogout}>
+            Logout
+          </a>
+        </li>
+        <Link to={`/profile`}>
+          <li className="nav-item">
+            <a className="nav-link" href={`/login`}>
+              Profile
+            </a>
+          </li>
+        </Link>
+      </>
     );
   } else {
     buttons = (
@@ -48,9 +57,9 @@ const NavBarView = (props) => {
         </Link>
         {buttons}
       </ul>
-      <form class="form-inline my-2 my-lg-0 float-right">
+      <div className="form-inline my-2 my-lg-0 float-right">
         <SearchBarContainer />
-      </form>
+      </div>
     </nav>
   );
 };
