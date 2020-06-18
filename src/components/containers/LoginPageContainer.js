@@ -18,7 +18,12 @@ class LoginPageContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.login(this.state.email, this.state.password);
+    try {
+      this.props.login(this.state.email, this.state.password);
+    } catch(error) {
+      console.log(error);
+      this.props.history.push("/login");
+    }
     this.props.history.push("/");
   };
 

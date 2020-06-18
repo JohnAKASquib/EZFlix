@@ -1,0 +1,11 @@
+.movie-page {
+    background-color:lightblue;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    font-weight: bold;
+}    
+  

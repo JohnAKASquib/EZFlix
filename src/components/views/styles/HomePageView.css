@@ -1,6 +1,7 @@
 .home-page {
-    text-align: left;
     background-color: rgb(100, 99, 99);   
+    margin: auto;
+    width: 100%;
 }
 
 .lead {
@@ -10,16 +11,15 @@
 }
 
 .container {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
     grid-auto-rows: minmax(50px, auto);
-    
 }
 
 .container :hover {
-    width: 100%;
-    background-color: rgba(255,255,255,0);
+    width: 100%;    
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
