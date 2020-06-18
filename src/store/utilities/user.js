@@ -57,7 +57,7 @@ export const signUpThunk = (email, password) => async (dispatch) => {
 export const loginThunk = (email, password) => async (dispatch) => {
   let results;
   try {
-    results = await axios.get(
+    results = await axios.post(
       "/auth/login",
       { email, password },
       { withCredentials: true }
