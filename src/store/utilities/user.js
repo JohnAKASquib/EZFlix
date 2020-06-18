@@ -3,6 +3,7 @@ import axios from "axios";
 // ACTION TYPES
 const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
 const FETCH_USER = "FETCH_USER";
 
 // ACTION CREATORS
@@ -19,6 +20,12 @@ const login = (user) => {
         payload: user,
     }
 };
+
+const logout = () => {
+    return {
+        type: LOGOUT,
+    }
+}
 
 const fetchUser = (user) => {
     return {
@@ -58,10 +65,20 @@ export const loginThunk = (email, password) => async (dispatch) => {
     }
 };
 
+export const logoutThunk = () => async (dispatch) => {
+    try {
+        await axios.delete("/auth/logout", { withCredentials: true });
+        dispatch(logout());
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
 export const me = () => async dispatch => {
   try {
     const res = await axios.get("/auth/me", { withCredentials: true });
-    dispatch(fetchUser(res.data || {}));
+    dispatch(login(res.data || {}));
   }
   catch (err) {
     console.error(err);
@@ -73,6 +90,8 @@ const reducer = (state = {}, action) => {
     switch (action.type) {
         case FETCH_USER:
             return action.payload;
+        case LOGOUT:
+            return {};
         default:
             return state;
     }
