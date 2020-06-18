@@ -25,9 +25,9 @@ class SearchBarContainer extends Component {
     );
   };
   handleTermChange = (e) => {
-    console.log(
-      "inside of handle term change the search term is " + e.target.value
-    );
+    //console.log(
+    //  "inside of handle term change the search term is " + e.target.value
+    //);
     //console.log(API_KEY);
     this.setState({
       searchTerm: e.target.value,

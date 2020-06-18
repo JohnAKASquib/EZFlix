@@ -3,18 +3,18 @@ import "bootstrap/dist/css/bootstrap.css";
 const SearchBarView = (props) => {
   return (
     <div
-      class="collapse navbar-collapse float-right"
+      className="collapse navbar-collapse float-right"
       id="navbarSupportedContent"
     >
-      <div class="form-group">
+      <div className="form-group">
         <label
-          for="exampleFormControlSelect1"
+          htmlFor="exampleFormControlSelect1"
           style={{ color: "white", paddingRight: "12px" }}
         >
           Search by Genre
         </label>
         <select
-          class="form-control"
+          className="form-control"
           id="exampleFormControlSelect1"
           style={{ marginRight: "12px" }}
           onChange={props.onGenreChange}
@@ -27,16 +27,16 @@ const SearchBarView = (props) => {
         </select>
       </div>
 
-      <form class="form-inline">
+      <form className="form-inline">
         <input
-          class="form-control mr-sm-2"
+          className="form-control mr-sm-2"
           type="search"
           placeholder="Search"
           onChange={props.onTermChange}
           aria-label="Search"
         ></input>
         <button
-          class="btn btn-outline-light"
+          className="btn btn-outline-light"
           onClick={props.onSubmit}
           type="submit"
         >

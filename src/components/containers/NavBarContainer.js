@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavBarView from "../views/NavBarView";
-import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
 import { logoutThunk, me } from "../../thunks";
 
