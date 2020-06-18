@@ -3,11 +3,6 @@ import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
 import { searchForMoviesThunk } from "../../thunks";
 
-const genreTerm = "&with_genres=";
-const API_KEY = process.env.API_KEY;
-const wholeURL =
-  "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query="; //Jack+Reacher"
-
 class SearchBarContainer extends Component {
   constructor() {
     super();
@@ -28,16 +23,16 @@ class SearchBarContainer extends Component {
     console.log(
       "inside of handle term change the search term is " + e.target.value
     );
-    console.log(API_KEY);
+    //console.log(API_KEY);
     this.setState({
       searchTerm: e.target.value,
     });
-    console.log(wholeURL);
+    // console.log(wholeURL);
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(wholeURL + this.state.searchTerm);
-    this.props.searchForMovies(wholeURL + this.state.searchTerm);
+    //  console.log(wholeURL + this.state.searchTerm);
+    this.props.searchForMovies(this.state.searchTerm);
   };
 
   render() {
@@ -60,7 +55,7 @@ const mapState = (state) => {
 //map dispatch to props
 const mapDispatch = (dispatch) => {
   return {
-    searchForMovies: (url) => dispatch(searchForMoviesThunk(url)),
+    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm)),
   };
 };
 
