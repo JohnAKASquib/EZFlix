@@ -17,12 +17,11 @@ const MovieView = (props) => {
                       <img
                         src={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`}
                         width="350px"
-                        alt={props.movie.title}
-                        
+                        alt={props.movie.title}                        
                       /> 
                       <h3>Voters</h3>
                       <p>{props.movie.vote_count}</p>
-                      <h3>Voters Rating</h3>
+                      <h3>Voter's Rating</h3>
                       <p>{props.movie.vote_average}</p>
                       <p>{props.movie.overview}</p>
         
