@@ -18,6 +18,7 @@ const SearchBarView = (props) => {
           id="exampleFormControlSelect1"
           style={{ marginRight: "12px" }}
           onChange={props.onGenreChange}
+          value={props.genreId}
         >
           <option value=""> </option>
           <option value="28">Action</option>
@@ -34,6 +35,7 @@ const SearchBarView = (props) => {
           placeholder="Search"
           onChange={props.onTermChange}
           aria-label="Search"
+          value={props.searchTerm}
         ></input>
         <button
           class="btn btn-outline-light"

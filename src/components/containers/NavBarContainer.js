@@ -7,7 +7,7 @@ class NavBarContainer extends Component {
     return (
       <>
         <NavBarView />
-        <SearchBarContainer />
+        {/* <SearchBarContainer /> */}
       </>
     );
   }

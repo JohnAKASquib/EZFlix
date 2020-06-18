@@ -24,18 +24,17 @@ class SearchBarContainer extends Component {
       "inside of handle genre change the genre term is now" + this.state.genreId
     );
   };
-  handleTermChange = (searchTerm) => {
+  handleTermChange = (e) => {
     console.log(
-      "inside of handle term change the search term is " +
-        searchTerm.target.value
+      "inside of handle term change the search term is " + e.target.value
     );
     this.setState({
-      searchTerm: searchTerm.target.value,
+      searchTerm: e.target.value,
     });
     console.log(wholeURL);
   };
   handleSubmit = () => {
-    this.props.searchForMovies(this.state.wholeURL + this.state.searchTerm);
+    this.props.searchForMovies(wholeURL + this.state.searchTerm);
   };
 
   render() {
@@ -44,6 +43,8 @@ class SearchBarContainer extends Component {
         onTermChange={this.handleTermChange}
         onGenreChange={this.handleGenreChange}
         onSubmit={this.handleSubmit}
+        genreId={this.state.genreId}
+        searchTerm={this.state.searchTerm}
       />
     );
   }
