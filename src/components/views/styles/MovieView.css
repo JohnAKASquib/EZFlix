@@ -1,11 +1,13 @@
 .movie-page {
-    background-color:lightblue;
+    background-color: #6899D3; 
+    padding-bottom: 150px;    
 }
 
 .container1 {
     display: flex;
     justify-content: center;
     background-color: transparent;
-    font-weight: bold;
+    font-weight: bold; width: auto;
+    
 }    
   

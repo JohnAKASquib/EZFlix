@@ -7,6 +7,7 @@ const HomePageView = (props) => {
   return (
     <div className="home-page">
       <h1 className="lead">Trending Movies</h1>
+      <pre> </pre>
       <div className="container">
         {props.allMovies.map((movie) => (
           <div
