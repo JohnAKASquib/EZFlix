@@ -6,16 +6,19 @@ import SearchBarView from "./SearchBarView";
 
 const NavBarView = (props) => {
   console.log(props.loggedInUser);
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <ul className="navbar-nav mr-auto">
-        <Link to={`/`}>
-          <li className="nav-item active">
-            <a className="nav-link" href={`/`}>
-              Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-        </Link>
+  let buttons;
+  if (props.isLoggedIn) {
+    buttons = (
+      <li className="nav-item">
+        <a className="nav-link" onClick={props.handleLogout}>
+          Logout
+        </a>
+      </li>
+    );
+  } else {
+    buttons = (
+      <>
+        {" "}
         <Link to={`/login`}>
           <li className="nav-item">
             <a className="nav-link" href={`/login`}>
@@ -30,11 +33,20 @@ const NavBarView = (props) => {
             </a>
           </li>
         </Link>
-        <li className="nav-item">
-          <a className="nav-link" onClick={props.handleLogout}>
-            Logout
-          </a>
-        </li>
+      </>
+    );
+  }
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <ul className="navbar-nav mr-auto">
+        <Link to={`/`}>
+          <li className="nav-item active">
+            <a className="nav-link" href={`/`}>
+              Home <span className="sr-only">(current)</span>
+            </a>
+          </li>
+        </Link>
+        {buttons}
       </ul>
       <form className="form-inline my-2 my-lg-0 float-right">
         <SearchBarView />
