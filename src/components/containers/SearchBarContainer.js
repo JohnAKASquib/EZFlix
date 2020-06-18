@@ -21,7 +21,7 @@ class SearchBarContainer extends Component {
     this.setState({ genreId: e.target.value });
     console.log("e target value is = " + e.target.value);
     console.log(
-      "inside of handle genre change the genre term is now" + this.state.genreId
+      "inside of handle genre change the genre id is now" + this.state.genreId
     );
   };
   handleTermChange = (e) => {
@@ -34,6 +34,7 @@ class SearchBarContainer extends Component {
     console.log(wholeURL);
   };
   handleSubmit = () => {
+    console.log(wholeURL + this.state.searchTerm);
     this.props.searchForMovies(wholeURL + this.state.searchTerm);
   };
 
@@ -43,8 +44,6 @@ class SearchBarContainer extends Component {
         onTermChange={this.handleTermChange}
         onGenreChange={this.handleGenreChange}
         onSubmit={this.handleSubmit}
-        genreId={this.state.genreId}
-        searchTerm={this.state.searchTerm}
       />
     );
   }
