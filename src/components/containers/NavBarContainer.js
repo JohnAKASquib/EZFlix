@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBarView from "../views/NavBarView";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
-import { logoutThunk } from "../../thunks";
+import { logoutThunk, me } from "../../thunks";
 
 class NavBarContainer extends Component {
   handleLogout = () => {
@@ -13,7 +13,7 @@ class NavBarContainer extends Component {
     return (
       <>
         <NavBarView
-          isLoggedIn={this.props.isLoggedIn}
+          // isLoggedIn={this.props.isLoggedIn}
           loggedInUser={this.props.loggedInUser}
           handleLogout={this.handleLogout}
         />
@@ -25,7 +25,7 @@ class NavBarContainer extends Component {
 
 const mapState = (state) => {
   return {
-    isLoggedIn: !!state.user.id,
+    //isLoggedIn: !!state.user.id,
     loggedInUser: state.user,
   };
 };
@@ -33,6 +33,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     logout: () => dispatch(logoutThunk()),
+    me: () => dispatch(me()),
   };
 };
 
