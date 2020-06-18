@@ -1,4 +1,26 @@
-.page {
-    background-color: lightblue;
+.movie-page {
+    background-color:lightblue;
 }
 
+.container1 {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}    
+
+.card-body1 {
+    display: inline-grid;
+    align-items: center;
+    grid-auto-rows: 600x;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .card-header1 {
+    align-self: stretch;
+  }
+  .card-footer1 {
+    align-self: stretch;
+  }
