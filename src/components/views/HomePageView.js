@@ -7,10 +7,11 @@ const HomePageView = (props) => {
   return (
     <div className="home-page">
       <h1 className="lead">Trending Movies</h1>
+      <pre> </pre>
       <div className="container">
         {props.allMovies.map((movie) => (
           <div
-            className="card text-center mt-5 mb-5"
+            className="card text-center"
             key={movie.id}
             style={{ width: 28.5 + "rem" }}
           >
@@ -25,6 +26,7 @@ const HomePageView = (props) => {
                 width="150px"
                 alt={movie.title}
               />
+              
               <p>{movie.overview}</p>
             </div>
             <div className="card-footer text-muted">

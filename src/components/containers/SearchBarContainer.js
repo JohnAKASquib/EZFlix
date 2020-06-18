@@ -3,6 +3,11 @@ import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
 import { searchForMoviesThunk } from "../../thunks";
 
+const genreTerm = "&with_genres=";
+const API_KEY = process.env.API_KEY;
+const wholeURL =
+  "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query="; //Jack+Reacher"
+
 class SearchBarContainer extends Component {
   constructor() {
     super();
