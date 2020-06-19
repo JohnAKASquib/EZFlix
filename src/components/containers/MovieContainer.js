@@ -19,7 +19,7 @@ class MovieContainer extends Component {
     }
 
     render() {
-        return <MovieView movie={this.props.movie} handleSubmit={this.handleSubmit} />;
+        return <MovieView movie={this.props.movie} handleSubmit={this.handleSubmit} isLoggedIn={this.props.isLoggedIn} />;
     }
 }
 
