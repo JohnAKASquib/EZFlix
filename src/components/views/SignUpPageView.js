@@ -1,54 +1,44 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import "./styles/LoginPageView.css";
 
 const SignUpPageView = (props) => {
   return (
-    <div className="page p-5">
+    <div>
       {props.loggedIn ? `The current logged in user is: ${props.userEmail}` : ""}
       <form className="center" onSubmit={props.handleSubmit}>
-        <div className="form pb-5">
-          Email Address:
+        <p className="lead">Passwords must be at least 6 characters</p>
+        <div className="text-field">
+          Email:
           <input
             type="email"
-            className="form-control"
+            className="input-field"
             name="email"
             onChange={props.handleChange}
             required
           />
-          <div className="valid-feedback">
-            Looks good!
-          </div>
-   
         </div>
-        <div className="form pb-4">
+        <div className="text-field">
           Password:
           <input
             type="password"
-            className="form-control"
+            className="input-field"
             name="password"
             onChange={props.handleChange}
             required
           />
-          <div className="invalid-feedback">
-            Passwords must be at least 6 characters!
-          </div>
         </div>
-        <div className="form pb-4">
+        <div className="text-field">
           Confirm Password:
           <input
             type="password"
-            className="form-control"
+            className="input-field"
             name="confirmPassword"
             onChange={props.handleChange}
             required
           />
-          <div className="invalid-feedback">
-            Password does not match!
-          </div>
         </div>
         {props.error && props.error.response && <div> {props.error.response.data} </div>}
-        <button className="btn btn-dark" type="submit">Sign Up!</button>
+        <button className="login-button">Sign Up</button>
       </form>
     </div>
   );
