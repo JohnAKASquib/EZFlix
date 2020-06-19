@@ -4,18 +4,25 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const LoginPageView = (props) => {
   return (
-    <div>
+    <div className="page p-5">
       <form className="center" onSubmit={props.handleSubmit}>
-        <div className="text-field">
-          Email: <input type="text" className="input-field" name="email" onChange={props.handleChange} required/>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">Email address</label>
+          <input type="email" className="form-control" name="email" aria-describedby="emailHelp" onChange={props.handleChange} required/>
+          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <div className="text-field">
-          Password:
-          <input type="password" className="input-field" name="password" onChange={props.handleChange} required/>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input type="password" className="form-control" name="password" onChange={props.handleChange} required/>
         </div>
-        <button className="login-button">Login</button>
+        <div className="form-group form-check">
+          <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+          <label className="form-check-label" htmlFor="exampleCheck1">Remember me </label>
+        </div>
+        <button type="submit" className="btn btn-dark">Login</button>
       </form>
     </div>
+    
   );
 };
 
