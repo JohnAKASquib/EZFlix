@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
-import { searchForMoviesThunk } from "../../thunks";
-
-const genreTerm = "&with_genres=";
-const API_KEY = process.env.API_KEY;
-const wholeURL =
-  "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query="; //Jack+Reacher"
+import { searchForMoviesThunk, byGenreThunk } from "../../thunks";
 
 class SearchBarContainer extends Component {
   constructor() {
     super();
     this.state = {
-      genreId: "",
+      genreId: 0,
       searchTerm: "",
     };
   }
@@ -25,19 +20,20 @@ class SearchBarContainer extends Component {
     );
   };
   handleTermChange = (e) => {
-    //console.log(
-    //  "inside of handle term change the search term is " + e.target.value
-    //);
-    //console.log(API_KEY);
+    console.log(
+      "inside of handle term change the search term is " + e.target.value
+    );
     this.setState({
       searchTerm: e.target.value,
     });
-    // console.log(wholeURL);
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    //  console.log(wholeURL + this.state.searchTerm);
-    this.props.searchForMovies(this.state.searchTerm);
+    if (this.state.genreId !== 0) {
+      this.props.getByGenre(this.state.genreId);
+    } else if (this.state.searchTerm !== "") {
+      this.props.searchForMovies(this.state.searchTerm);
+    }
   };
 
   render() {
@@ -61,6 +57,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm)),
+    getByGenre: (id) => dispatch(byGenreThunk(id)),
   };
 };
 
