@@ -1,8 +1,10 @@
 .home-page {
-    background-color: rgb(100, 99, 99);   
-    margin: auto;
-    width: 100%;
-    padding-bottom: 100px;
+    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-bottom: 50px;
 }
 
 .lead {
@@ -17,26 +19,35 @@
     justify-content: center;
     grid-template-columns: repeat(3, 2fr);
     grid-gap: 20px;
-    
+    padding-bottom: 50px;
 }
 
-.container :hover {
-    width: 100%;    
+/*.card-header,
+.card-body,
+.card-footer {
+    border-style: groove;
+}*/
+
+.card-header,
+.card-body {
+    border-bottom: solid;
+    border-color: black;
+    font-size: 17.5px;
+    color: snow;
+}
+
+.card-body :hover{
+    width: 100%;  
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;    
 }
 
-.card-header,
-.card-body,
-.card-footer {
-    background-color: seashell;
-    border-style: groove;
-}
-
-.card-header,
-.card-body {
+.card {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: solid;
     border-bottom: solid;
 }
