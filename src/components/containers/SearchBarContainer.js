@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
 import { searchForMoviesThunk } from "../../thunks";
-
-const genreTerm = "&with_genres=";
-const API_KEY = process.env.API_KEY;
-const wholeURL =
-  "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query="; //Jack+Reacher"
+import { Redirect } from "react-router-dom";
 
 class SearchBarContainer extends Component {
   constructor() {
@@ -25,19 +21,19 @@ class SearchBarContainer extends Component {
     );
   };
   handleTermChange = (e) => {
-    //console.log(
-    //  "inside of handle term change the search term is " + e.target.value
-    //);
-    //console.log(API_KEY);
+    console.log(
+      "inside of handle term change the search term is " + e.target.value
+    );
+
     this.setState({
       searchTerm: e.target.value,
     });
-    // console.log(wholeURL);
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    //  console.log(wholeURL + this.state.searchTerm);
     this.props.searchForMovies(this.state.searchTerm);
+    console.log("wonder why its not working");
+    return <Redirect to={`/`} />;
   };
 
   render() {
