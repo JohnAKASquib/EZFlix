@@ -50,8 +50,7 @@ const NavBarView = (props) => {
       <ul className="navbar-nav mr-auto">
         
           <li className="nav-item active">
-          
-            <Link className="nav-link" to={`/`} onClick={props.homeClicked}>
+          <Link className="nav-link" to={`/`}>
               Home <span className="sr-only">(current)</span>
             </Link>
           </li>
