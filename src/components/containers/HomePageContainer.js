@@ -3,7 +3,6 @@ import HomePageView from "../views/HomePageView";
 import { connect } from "react-redux";
 import { fetchAllMoviesThunk } from "../../thunks";
 
-
 class HomePageContainer extends Component {
   componentDidMount() {
     this.props.fetchAllMovies();
