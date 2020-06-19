@@ -14,6 +14,7 @@ const SignUpPageView = (props) => {
             className="input-field"
             name="email"
             onChange={props.handleChange}
+            required
           />
         </div>
         <div className="text-field">
@@ -23,6 +24,7 @@ const SignUpPageView = (props) => {
             className="input-field"
             name="password"
             onChange={props.handleChange}
+            required
           />
         </div>
         <div className="text-field">
@@ -32,6 +34,7 @@ const SignUpPageView = (props) => {
             className="input-field"
             name="confirmPassword"
             onChange={props.handleChange}
+            required
           />
         </div>
         {props.error && props.error.response && <div> {props.error.response.data} </div>}
