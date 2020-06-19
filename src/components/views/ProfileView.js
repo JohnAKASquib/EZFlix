@@ -7,7 +7,7 @@ const ProfileView = (props) => {
     let listOfFavoriteMovies = [];
 
     if (!props.isLoggedIn) {
-        return <Redirect to={`/`} />;
+        return <Redirect to={`/login`} />;
     }
 
     if (props.favoriteMovies.length !== 0) {
@@ -64,6 +64,7 @@ const ProfileView = (props) => {
                             <h3>Voter's Rating</h3>
                             <p>{movie.vote_average}</p>
                             <p>{movie.overview}</p>
+                            <button className="btn btn-danger" onClick={() => props.handleSubmit(movie.movieAPIid)}>Remove from Favorites</button>
                         </div>
                         <div className="card-footer text-muted">
                             <h2>Release Date</h2>
