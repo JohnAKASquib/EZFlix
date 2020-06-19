@@ -15,46 +15,46 @@ const NavBarView = (props) => {
             Logout
           </a>
         </li>
-        <Link to={`/profile`}>
+       
           <li className="nav-item">
-            <a className="nav-link" href={`/login`}>
+            <Link className="nav-link" to={`/login`}>
               Profile
-            </a>
+            </Link>
           </li>
-        </Link>
+        
       </>
     );
   } else {
     buttons = (
       <>
         {" "}
-        <Link to={`/login`}>
+        
           <li className="nav-item">
-            <a className="nav-link" href={`/login`}>
+            <Link className="nav-link" to={`/login`}>
               Login
-            </a>
+            </Link>
           </li>
-        </Link>
-        <Link to={`/signup`}>
+        
+        
           <li className="nav-item">
-            <a className="nav-link" href={`/signup`}>
+            <Link className="nav-link" to={`/signup`}>
               Sign Up
-            </a>
+            </Link>
           </li>
-        </Link>
+        
       </>
     );
   }
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <ul className="navbar-nav mr-auto">
-        <Link to={`/`}>
+        
           <li className="nav-item active">
-            <a className="nav-link" href={`/`}>
+          <Link className="nav-link" to={`/`}>
               Home <span className="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
-        </Link>
+        
         {buttons}
       </ul>
       <div className="form-inline my-2 my-lg-0 float-right">
