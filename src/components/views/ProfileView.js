@@ -7,6 +7,7 @@ const ProfileView = (props) => {
     let listOfFavoriteMovies = [];
 
     if (!props.isLoggedIn) {
+        console.log(props.isLoggedIn);
         return <Redirect to={`/login`} />;
     }
 

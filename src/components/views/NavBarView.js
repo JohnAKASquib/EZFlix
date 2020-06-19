@@ -11,13 +11,13 @@ const NavBarView = (props) => {
     buttons = (
       <>
         <li className="nav-item">
-          <a className="nav-link" onClick={props.handleLogout}>
+          <Link className="nav-link" onClick={props.handleLogout}>
             Logout
-          </a>
+          </Link>
         </li>
        
           <li className="nav-item">
-            <Link className="nav-link" to={`/login`}>
+            <Link className="nav-link" to={`/profile`}>
               Profile
             </Link>
           </li>
