@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
 import { searchForMoviesThunk } from "../../thunks";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 class SearchBarContainer extends Component {
   constructor() {
@@ -33,7 +33,8 @@ class SearchBarContainer extends Component {
     e.preventDefault();
     this.props.searchForMovies(this.state.searchTerm);
     console.log("wonder why its not working");
-    return <Redirect to={`/`} />;
+    //this.props.history.push("/search");
+    //return <Redirect to={`/`} />;
   };
 
   render() {
@@ -54,10 +55,11 @@ const mapState = (state) => {
 };
 
 //map dispatch to props
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, ownProps) => {
   return {
-    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm)),
+    searchForMovies: (searchTerm) =>
+      dispatch(searchForMoviesThunk(searchTerm, ownProps)),
   };
 };
 
-export default connect(mapState, mapDispatch)(SearchBarContainer);
+export default withRouter(connect(mapState, mapDispatch)(SearchBarContainer));
