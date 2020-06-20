@@ -29,7 +29,12 @@ class SearchBarContainer extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.genreId !== 0) {
+    const genre = Number(this.state.genreId);
+
+    if (genre !== 0 && this.state.searchTerm !== "") {
+      console.log("search by genre and search term");
+      // INSERT search by genre and search term thunk call here:
+    } else if (genre !== 0) {
       this.props.getByGenre(this.state.genreId);
     } else if (this.state.searchTerm !== "") {
       this.props.searchForMovies(this.state.searchTerm);
@@ -57,7 +62,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch, ownProps) => {
   return {
     searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm, ownProps)),
-    getByGenre: (id) => dispatch(byGenreThunk(id)),
+    getByGenre: (id) => dispatch(byGenreThunk(id, ownProps)),
   };
 };
 
