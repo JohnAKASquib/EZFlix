@@ -17,7 +17,7 @@ const NavBarView = (props) => {
         </li>
        
           <li className="nav-item">
-            <Link className="nav-link" to={`/login`}>
+            <Link className="nav-link" to={`/profile`}>
               Profile
             </Link>
           </li>
