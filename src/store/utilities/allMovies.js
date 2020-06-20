@@ -52,7 +52,7 @@ export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
     .catch((error) => console.log(error));
 };
 
-export const byGenreThunk = (id) => (dispatch) => {
+export const byGenreThunk = (id, ownProps) => (dispatch) => {
   console.log(id);
   return axios
     .get(`/api/movies/search/genre/${id}`)
@@ -60,6 +60,7 @@ export const byGenreThunk = (id) => (dispatch) => {
     .then((movies) => {
       console.log(movies);
       dispatch(byGenre(movies.results));
+      ownProps.history.push("/search");
     })
     .catch((error) => console.log(error));
 };
