@@ -1,5 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
+
 const SearchBarView = (props) => {
   return (
     <div
@@ -19,7 +21,7 @@ const SearchBarView = (props) => {
           style={{ marginRight: "12px" }}
           onChange={props.onGenreChange}
         >
-          <option value=""> </option>
+          <option value="0"> </option>
           <option value="28">Action</option>
           <option value="35">Comedy</option>
           <option value="27">Horror</option>
