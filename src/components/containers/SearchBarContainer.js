@@ -13,11 +13,10 @@ class SearchBarContainer extends Component {
   }
 
   handleGenreChange = (e) => {
-    this.setState({ genreId: e.target.value });
-    console.log("e target value is = " + e.target.value);
-    console.log(
-      "inside of handle genre change the genre id is now" + this.state.genreId
-    );
+    //this is all that was needed :'(
+    this.setState({ genreId: e.target.value }, () => {
+      console.log(this.state.genreId);
+    });
   };
   handleTermChange = (e) => {
     console.log(
