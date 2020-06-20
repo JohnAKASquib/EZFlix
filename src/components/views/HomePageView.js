@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const HomePageView = (props) => {
   return (
-    <div className="home-page">
+    <div className="home-page" >
       <h1 className="lead">Trending Movies</h1>
       <pre> </pre>
       <div className="container">
@@ -13,7 +13,7 @@ const HomePageView = (props) => {
           <div
             className="card text-center"
             key={movie.id}
-            style={{ width: 28.5 + "rem" }}
+            style={{ width: 28.5 + "rem"}}
           >
             <div className="card-header">
               <Link to={`/movies/${movie.id}`}>

@@ -1,0 +1,30 @@
+.center {
+    width: 33%;
+    border: 3px solid black;
+    text-align: center;
+    padding: 3rem;
+    margin: auto;
+    margin-top: 3rem;
+    box-sizing: border-box;
+    box-shadow: black;
+  }
+  
+  .input-field {
+    margin: 6px;
+    width: auto;
+  }
+  
+  .login-button {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: large;
+    border: 5px;
+    border-color: black;
+    width: 6rem;
+    height: 3rem;
+  }
+  
+  .login-button:hover {
+    background-color: beige;
+  }
+  
