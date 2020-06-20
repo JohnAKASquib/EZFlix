@@ -12,7 +12,7 @@ class HomePageContainer extends Component {
   render() {
     return (
       <>
-        <HomePageView allMovies={this.props.allMovies} />;
+        <HomePageView allMovies={this.props.allMovies} />
       </>
     );
   }

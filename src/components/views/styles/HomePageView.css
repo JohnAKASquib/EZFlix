@@ -7,6 +7,31 @@
     padding-bottom: 50px;
 }
 
+
+@media only screen and (max-width: 1000px) {
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .home-page {
+        background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;     
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: stretch
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        vertical-align: -webkit-baseline-middle;
+    }
+  }
+
 .lead {
     text-align: center;
     font-weight: bolder;
@@ -16,7 +41,7 @@
 
 .container {
     display: grid;
-    justify-content: center;
+    justify-content: center ;
     grid-template-columns: repeat(3, 2fr);
     grid-gap: 20px;
     padding-bottom: 50px;
@@ -51,3 +76,4 @@
     border-top: solid;
     border-bottom: solid;
 }
+
