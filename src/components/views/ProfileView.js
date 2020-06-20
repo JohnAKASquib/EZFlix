@@ -19,7 +19,8 @@ const ProfileView = (props) => {
     const date = props.loggedInUser.createdAt.toString().substring(0, 10);
 
     return (
-        <div className="container">
+        <div className="container p-5">
+            <div className="row">
             <div
                 className="card text-center"
                 key={props.loggedInUser.id}
@@ -41,7 +42,10 @@ const ProfileView = (props) => {
                     </p>
                 </div>
             </div>
-            <div>
+
+            </div>
+            
+            <div className="row">
                 {props.favoriteMovies.length === 0 ? <div className="alert alert-warning">{props.loggedInUser.email} has no favorited movies.</div> : <div>{listOfFavoriteMovies.map((movie) => (
                     <div
                         className="card text-center"

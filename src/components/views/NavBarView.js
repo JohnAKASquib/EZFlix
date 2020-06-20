@@ -10,16 +10,16 @@ const NavBarView = (props) => {
   if (props.isLoggedIn) {
     buttons = (
       <>
-        <li className="nav-item">
-          <a className="nav-link" onClick={props.handleLogout}>
-            Logout
-          </a>
-        </li>
-       
+            
           <li className="nav-item">
-            <Link className="nav-link" to={`/login`}>
+            <Link className="nav-link" to={`/profile`}>
               Profile
             </Link>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" onClick={props.handleLogout}>
+              Logout
+            </a>
           </li>
         
       </>
