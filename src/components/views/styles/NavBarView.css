@@ -20,6 +20,7 @@
   font-family: sans-serif;
   font-weight: bold;
 }
-.buttons:hover {
-  background-color: yellow;
+.nav-item:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
