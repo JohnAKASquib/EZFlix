@@ -23,8 +23,9 @@ class SearchBarContainer extends Component {
     console.log(
       "inside of handle term change the search term is " + e.target.value
     );
+    const search = e.target.value.trim();
     this.setState({
-      searchTerm: e.target.value,
+      searchTerm: search,
     });
   };
   handleSubmit = (e) => {
