@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
-import { searchForMoviesThunk, byGenreThunk } from "../../thunks";
-import { Redirect, withRouter } from "react-router-dom";
+import {
+  searchForMoviesThunk,
+  byGenreThunk,
+  searchByTermAndIdThunk,
+} from "../../thunks";
+import { withRouter } from "react-router-dom";
 
 class SearchBarContainer extends Component {
   constructor() {
@@ -33,7 +37,7 @@ class SearchBarContainer extends Component {
 
     if (genre !== 0 && this.state.searchTerm !== "") {
       console.log("search by genre and search term");
-      // INSERT search by genre and search term thunk call here:
+      this.props.getByGenreAndTerm(this.state.searchTerm, this.state.genreId);
     } else if (genre !== 0) {
       this.props.getByGenre(this.state.genreId);
     } else if (this.state.searchTerm !== "") {
@@ -61,8 +65,11 @@ const mapState = (state) => {
 //map dispatch to props
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm, ownProps)),
+    searchForMovies: (searchTerm) =>
+      dispatch(searchForMoviesThunk(searchTerm, ownProps)),
     getByGenre: (id) => dispatch(byGenreThunk(id, ownProps)),
+    getByGenreAndTerm: (term, id) =>
+      dispatch(searchByTermAndIdThunk(term, id, ownProps)),
   };
 };
 
