@@ -1,40 +1,39 @@
 import React, { Component } from "react";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
-import { searchForMoviesThunk } from "../../thunks";
+import { searchForMoviesThunk, byGenreThunk } from "../../thunks";
 import { Redirect, withRouter } from "react-router-dom";
 
 class SearchBarContainer extends Component {
   constructor() {
     super();
     this.state = {
-      genreId: "",
+      genreId: 0,
       searchTerm: "",
     };
   }
 
   handleGenreChange = (e) => {
-    this.setState({ genreId: e.target.value });
-    console.log("e target value is = " + e.target.value);
-    console.log(
-      "inside of handle genre change the genre id is now" + this.state.genreId
-    );
+    //this is all that was needed :'(
+    this.setState({ genreId: e.target.value }, () => {
+      console.log(this.state.genreId);
+    });
   };
   handleTermChange = (e) => {
     console.log(
       "inside of handle term change the search term is " + e.target.value
     );
-
     this.setState({
       searchTerm: e.target.value,
     });
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.searchForMovies(this.state.searchTerm);
-    console.log("wonder why its not working");
-    //this.props.history.push("/search");
-    //return <Redirect to={`/`} />;
+    if (this.state.genreId !== 0) {
+      this.props.getByGenre(this.state.genreId);
+    } else if (this.state.searchTerm !== "") {
+      this.props.searchForMovies(this.state.searchTerm);
+    }
   };
 
   render() {
@@ -57,8 +56,8 @@ const mapState = (state) => {
 //map dispatch to props
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    searchForMovies: (searchTerm) =>
-      dispatch(searchForMoviesThunk(searchTerm, ownProps)),
+    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm, ownProps)),
+    getByGenre: (id) => dispatch(byGenreThunk(id)),
   };
 };
 

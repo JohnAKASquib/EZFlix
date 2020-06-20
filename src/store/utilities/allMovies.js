@@ -3,6 +3,7 @@ import axios from "axios";
 // ACTION TYPES
 const FETCH_ALL_MOVIES = "FETCH_ALL_MOVIES";
 const SEARCH_MOVIES = "SEARCH_MOVIES";
+const BY_GENRE = "BY_GENRE";
 
 // ACTION CREATORS
 const fetchAllMovies = (movies) => {
@@ -15,6 +16,13 @@ const fetchAllMovies = (movies) => {
 const searchMovies = (movies) => {
   return {
     type: SEARCH_MOVIES,
+    payload: movies,
+  };
+};
+
+const byGenre = (movies) => {
+  return {
+    type: BY_GENRE,
     payload: movies,
   };
 };
@@ -44,12 +52,26 @@ export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
     .catch((error) => console.log(error));
 };
 
+export const byGenreThunk = (id) => (dispatch) => {
+  console.log(id);
+  return axios
+    .get(`/api/movies/search/genre/${id}`)
+    .then((res) => res.data)
+    .then((movies) => {
+      console.log(movies);
+      dispatch(byGenre(movies.results));
+    })
+    .catch((error) => console.log(error));
+};
+
 // REDUCERS
 const reducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_ALL_MOVIES:
       return action.payload;
     case SEARCH_MOVIES:
+      return action.payload;
+    case BY_GENRE:
       return action.payload;
     default:
       return state;
