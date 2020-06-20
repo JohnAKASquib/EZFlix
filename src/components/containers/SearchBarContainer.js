@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchBarView from "../views/SearchBarView";
 import { connect } from "react-redux";
 import { searchForMoviesThunk, byGenreThunk } from "../../thunks";
+import { Redirect, withRouter } from "react-router-dom";
 
 class SearchBarContainer extends Component {
   constructor() {
@@ -53,11 +54,11 @@ const mapState = (state) => {
 };
 
 //map dispatch to props
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, ownProps) => {
   return {
-    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm)),
+    searchForMovies: (searchTerm) => dispatch(searchForMoviesThunk(searchTerm, ownProps)),
     getByGenre: (id) => dispatch(byGenreThunk(id)),
   };
 };
 
-export default connect(mapState, mapDispatch)(SearchBarContainer);
+export default withRouter(connect(mapState, mapDispatch)(SearchBarContainer));

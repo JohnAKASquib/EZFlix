@@ -10,6 +10,7 @@ import LoginPageContainer from "../containers/LoginPageContainer";
 import SignUpPageContainer from "../containers/SignUpPageContainer";
 import MovieContainer from "../containers/MovieContainer";
 import ProfileContainer from "../containers/ProfileContainer";
+import SearchPageContainer from "../containers/SearchPageContainer";
 const RoutesView = () => {
   return (
     <Switch>
@@ -17,6 +18,7 @@ const RoutesView = () => {
       <Route exact path="/login" component={LoginPageContainer} />
       <Route exact path="/signup" component={SignUpPageContainer} />
       <Route exact path="/profile" component={ProfileContainer} />
+      <Route exact path="/search" component={SearchPageContainer} />
       <Route exact path="/movies/:id" component={MovieContainer} />
     </Switch>
   );

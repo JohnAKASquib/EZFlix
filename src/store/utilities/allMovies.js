@@ -39,7 +39,7 @@ export const fetchAllMoviesThunk = () => (dispatch) => {
     .catch((error) => console.log(error));
 };
 
-export const searchForMoviesThunk = (searchTerm) => (dispatch) => {
+export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
   console.log(searchTerm);
   return axios
     .get(`/api/movies/search/${searchTerm}`)
@@ -47,6 +47,7 @@ export const searchForMoviesThunk = (searchTerm) => (dispatch) => {
     .then((movies) => {
       console.log(movies);
       dispatch(searchMovies(movies.results));
+      ownProps.history.push("/search");
     })
     .catch((error) => console.log(error));
 };
