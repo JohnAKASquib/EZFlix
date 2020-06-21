@@ -5,23 +5,18 @@ import { Link } from "react-router-dom";
 const SearchBarView = (props) => {
   return (
     <div
-      className="collapse navbar-collapse float-right"
+      className="navbar-collapse float-right"
       id="navbarSupportedContent"
     >
-      <div className="form-group">
-        <label
-          htmlFor="exampleFormControlSelect1"
-          style={{ color: "white", paddingRight: "12px" }}
-        >
-          Search by Genre
-        </label>
+      <div className=" form-group">
+        
         <select
           className="form-control"
           id="exampleFormControlSelect1"
           style={{ marginRight: "12px" }}
           onChange={props.onGenreChange}
         >
-          <option value="0"> </option>
+          <option value="0">Search by Genre </option>
           <option value="28">Action</option>
           <option value="35">Comedy</option>
           <option value="27">Horror</option>

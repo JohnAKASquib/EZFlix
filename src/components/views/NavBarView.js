@@ -10,55 +10,60 @@ const NavBarView = (props) => {
   if (props.isLoggedIn) {
     buttons = (
       <>
-        <li className="nav-item">
-          <a className="nav-link" onClick={props.handleLogout}>
-            Logout
-          </a>
-        </li>
-        <Link to={`/profile`}>
+            
           <li className="nav-item">
-            <a className="nav-link" href={`/login`}>
+            <Link className="nav-link" to={`/profile`}>
               Profile
+            </Link>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" onClick={props.handleLogout}>
+              Logout
             </a>
           </li>
-        </Link>
+        
       </>
     );
   } else {
     buttons = (
       <>
         {" "}
-        <Link to={`/login`}>
+        
           <li className="nav-item">
-            <a className="nav-link" href={`/login`}>
+            <Link className="nav-link" to={`/login`}>
               Login
-            </a>
+            </Link>
           </li>
-        </Link>
-        <Link to={`/signup`}>
+        
+        
           <li className="nav-item">
-            <a className="nav-link" href={`/signup`}>
+            <Link className="nav-link" to={`/signup`}>
               Sign Up
-            </a>
+            </Link>
           </li>
-        </Link>
+        
       </>
     );
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <ul className="navbar-nav mr-auto">
-        <Link to={`/`}>
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="navbar-collapse">
+      <ul className="navbar-nav  mr-auto">
+        
           <li className="nav-item active">
-            <a className="nav-link" href={`/`} onClick={props.homeClicked}>
+          <Link className="nav-link" to={`/`}>
               Home <span className="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
-        </Link>
+        
         {buttons}
       </ul>
+      </div>
       <div className="form-inline my-2 my-lg-0 float-right">
-        <SearchBarContainer />
+        <SearchBarContainer className="collapse navbar-collapse float-right"/>
       </div>
     </nav>
   );

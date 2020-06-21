@@ -1,44 +1,49 @@
-.profile {
-    justify-content: center;
-    background-color: #563e91 !important;
-}
-.rgba-gradient {
-    background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-    background: linear-gradient(to 45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  }
-.container2 {
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-
-.card2 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgba(192, 17, 17, 0.5);
-    border-style: double solid;
-    height: 300px;
-    display: grid;
-    justify-content: center;
-    padding-top: 20px;
-    
-}
-
-.card-body2{
-    height: 150px;
-}
-
-.card-header2,
-.card-body2,
-.card-footer2 {
-    border-style: double double;
-}
-
-.container3 {
-    display: grid;
-    justify-content: center;
-    grid-template-rows: repeat(3, 2fr);
-    padding-top: 50px;
-    grid-gap: 20px;
+.profile-page {
+    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
     padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .profile-page {
+        background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;     
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: auto;
+        
+    }
+    .containcard, .card{
+        display: flex;
+        flex-direction: column;
+        vertical-align: -webkit-baseline-middle;
+    }       
+    
+  }
+
+
+.containcard {
+    display: block;
+    column-count: 2;
+    float: right;
+    position: absolute;
+    left: 25%;
+    text-align: left;
+}
+
+.card:nth-of-type(2){
+    break-after:column;
+    display:block;
 }

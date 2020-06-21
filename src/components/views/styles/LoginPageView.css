@@ -1,3 +1,15 @@
+body {
+  background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media (min-width:1000px){
+
+}
+
 .center {
   width: 33%;
   border: 3px solid black;
@@ -7,6 +19,11 @@
   margin-top: 3rem;
   box-sizing: border-box;
   box-shadow: black;
+  border-bottom: solid;
+  border-color: black;
+  font-size: 17.5px;
+  color: snow;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .input-field {
@@ -26,4 +43,31 @@
 
 .login-button:hover {
   background-color: beige;
+}
+
+@media screen and (max-width: 1000px) {
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  .page1 {
+      background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;     
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-self: stretch;
+      overflow: auto;
+      display: flex;
+      
+  }
+  .center{
+    display: grid;
+    justify-content: center;
+    width: fit-content;
+  }
 }

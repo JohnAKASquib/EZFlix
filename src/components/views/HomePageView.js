@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 
 const HomePageView = (props) => {
   return (
-    <div className="home-page" >
+    <div className="container-fluid home-page" >
       <h1 className="lead">Trending Movies</h1>
       <pre> </pre>
-      <div className="container">
+      <div className="container p-5">
         {props.allMovies.map((movie) => (
+          
           <div
-            className="card text-center"
+            className="card mb-5 text-center"
             key={movie.id}
             style={{ width: 28.5 + "rem"}}
           >
