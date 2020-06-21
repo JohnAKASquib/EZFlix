@@ -20,10 +20,19 @@ const ProfileView = (props) => {
     const date = props.loggedInUser.createdAt.toString().substring(0, 10);
 
     return (
-        <div className="profile-page container-fluid">
-            <h2 className="py-5">Account</h2>
+        <div className="home-page container-fluid p-5">
+            
+            <div className="row p-5">
+                <h2 className="col ">Account</h2>
+                <button className="float-right btn btn-danger" onClick={props.handleLogout}>Logout</button>
+            </div>
             <hr/>
-            <div className="row px-5 ">
+            <div className="row">
+            <div className="col-2 float-left">
+                <img src={props.loggedInUser.imageUrl} alt={props.isLoggedIn.email} />
+            </div>
+            <div className="col-6 float-right">
+                <div className="row px-5 ">
                 <div className="col px-5">
                     <h4>Email:</h4>
                     
@@ -36,9 +45,7 @@ const ProfileView = (props) => {
                 <div className="float-right"> 
                     <h5>{props.loggedInUser.email}</h5>
                 </div>
-                <div>
-                    <button className="btn btn-danger" onClick={props.handleLogout}>Logout</button>
-                </div>
+                
             </div>
 
             </div>
@@ -53,12 +60,18 @@ const ProfileView = (props) => {
                     </div>
                     
             </div>
-            <img src={props.loggedInUser.imageUrl} alt={props.isLoggedIn.email} />
+
+            </div>
+
+            </div>
+            
+            
+            
             <hr/>
 
             <h2 className="py-5">Your Favorite Movies:</h2>
             <div className="containcard mb-5">
-                {props.favoriteMovies.length === 0 ? <div className="alert alert-warning">{props.loggedInUser.email} has no favorited movies.</div> : <div>{listOfFavoriteMovies.map((movie) => (
+                {props.favoriteMovies.length === 0 ? <div className="alert alert-warning">Oops! There is nothing here!</div> : <div>{listOfFavoriteMovies.map((movie) => (
                     <div
                         className="card text-center mb-5"
                         key={movie.movieAPIid}
