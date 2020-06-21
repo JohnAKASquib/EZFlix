@@ -5,8 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 const LoginPageView = (props) => {
   return (
     <div className="page p-5">
-      <form className="center" onSubmit={props.handleSubmit}>
-      <div className="form-group">
+      <form className="center " onSubmit={props.handleSubmit}>
+      <div className="form-group ">
           <label htmlFor="exampleInputEmail1">Email Address</label>
           <input type="email" className="form-control" name="email" aria-describedby="emailHelp" onChange={props.handleChange} required/>
           <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>

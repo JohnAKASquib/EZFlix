@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const SearchBarView = (props) => {
   return (
     <div
-      className="collapse navbar-collapse float-right"
+      className="navbar-collapse float-right"
       id="navbarSupportedContent"
     >
-      <div className="form-group">
+      <div className=" form-group">
         
         <select
           className="form-control"

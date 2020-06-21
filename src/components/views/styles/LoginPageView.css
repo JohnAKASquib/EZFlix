@@ -6,6 +6,10 @@
     -o-background-size: cover;
 
 }
+@media (min-width:1000px){
+  
+
+}
 .center {
   width: 33%;
   border: 3px solid black;
