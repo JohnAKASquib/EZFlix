@@ -10,6 +10,7 @@ class SignUpPageContainer extends Component {
       email: "",
       password: "",
       confirmPassword: "",
+      imageUrl: "",
       isValidPassword: false,
       errors: {},
     };
@@ -45,7 +46,7 @@ class SignUpPageContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     if (this.state.isValidPassword) {
-      this.props.signUp(this.state.email, this.state.password);
+      this.props.signUp(this.state.email, this.state.password, this.state.imageUrl);
       this.props.history.push("/login");
     }
   };
@@ -71,7 +72,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    signUp: (email, password) => dispatch(signUpThunk(email, password, ownProps))
+    signUp: (email, password, imageUrl) => dispatch(signUpThunk(email, password, imageUrl, ownProps))
   }
 }
 
