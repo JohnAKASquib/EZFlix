@@ -7,9 +7,9 @@ const SignUpPageView = (props) => {
     <div className="page p-5">
       {props.loggedIn ? `The current logged in user is: ${props.userEmail}` : ""}
       <form className="center" onSubmit={props.handleSubmit}>
-        
+        <p style={{ color: "red" }}>* Required</p>
         <div className="form pb-5">
-          Email Address:
+          Email Address: <span style={{ color: "red" }}>*</span>
           <input
             type="email"
             className="form-control"
@@ -20,7 +20,7 @@ const SignUpPageView = (props) => {
         </div>
         <div className="text-warning">Password must be at least 6 characters long!</div>
         <div className="form pb-4">
-          Password:
+          Password: <span style={{ color: "red" }}>*</span>
           <input
             type="password"
             className="form-control"
@@ -31,13 +31,22 @@ const SignUpPageView = (props) => {
           
         </div>
         <div className="form pb-4">
-          Confirm Password:
+          Confirm Password: <span style={{ color: "red" }}>*</span>
           <input
             type="password"
             className="form-control"
             name="confirmPassword"
             onChange={props.handleChange}
             required
+          />
+        </div>
+        <div className="form pb-4">
+          Profile Image:
+          <input
+            type="text"
+            className="form-control"
+            name="imageUrl"
+            onChange={props.handleChange}
           />
         </div>
         {props.isValidPassword ? <div></div> : <div style={{ color: "red", fontWeight: "bold" }}>{props.errors.name}</div>}
