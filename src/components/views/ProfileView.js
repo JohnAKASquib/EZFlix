@@ -61,7 +61,7 @@ const ProfileView = (props) => {
                 {props.favoriteMovies.length === 0 ? <div className="alert alert-warning">{props.loggedInUser.email} has no favorited movies.</div> : <div>{listOfFavoriteMovies.map((movie) => (
                     <div
                         className="card text-center mb-5"
-                        key={movie.id}
+                        key={movie.movieAPIid}
                         style={{ width: 28.5 + "rem" }}
                     >
                         <div className="card-header">
