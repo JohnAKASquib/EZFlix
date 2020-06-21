@@ -8,12 +8,9 @@
 }
 
 
-@media screen and (max-width: 1000px) {
-    * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+
+@media only screen and (max-width: 1000px) {
+
     .home-page {
         background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -23,14 +20,16 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        justify-self: stretch;
-        overflow: auto;
+        justify-self: stretch;   
+        
+
     }
 
     .container, .card{
         display: flex;
         flex-direction: column;
         align-items: center;
+
 
     }
   }
