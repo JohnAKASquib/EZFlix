@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import SearchBarContainer from "../containers/SearchBarContainer";
 
 const NavBarView = (props) => {
-  console.log(props.loggedInUser);
   let buttons;
   if (props.isLoggedIn) {
     buttons = (
@@ -17,9 +16,9 @@ const NavBarView = (props) => {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" onClick={props.handleLogout}>
+            <Link to="" className="nav-link" onClick={props.handleLogout}>
               Logout
-            </a>
+            </Link>
           </li>
         
       </>

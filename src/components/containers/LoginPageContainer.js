@@ -18,13 +18,7 @@ class LoginPageContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    try {
-      this.props.login(this.state.email, this.state.password);
-    } catch(error) {
-      console.log(error);
-      this.props.history.push("/login");
-    }
-    this.props.history.push("/");
+    this.props.login(this.state.email, this.state.password);
   };
 
   render() {
@@ -47,9 +41,9 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, ownProps) => {
   return {
-    login: (email, password) => dispatch(loginThunk(email, password)),
+    login: (email, password) => dispatch(loginThunk(email, password, ownProps)),
   };
 };
 

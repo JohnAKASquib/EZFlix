@@ -6,7 +6,6 @@ import { fetchAllMoviesThunk } from "../../thunks";
 class HomePageContainer extends Component {
   componentDidMount() {
     this.props.fetchAllMovies();
-    console.log("hi");
   }
 
   render() {

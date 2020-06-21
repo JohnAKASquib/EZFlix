@@ -10,16 +10,36 @@ class SignUpPageContainer extends Component {
       email: "",
       password: "",
       confirmPassword: "",
+      isValidPassword: false,
+      errors: {},
     };
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value }, this.validatePassword);
+  };
+
+  validatePassword = () => {
+    const { password } = this.state;
+    const { confirmPassword } = this.state;
+    let errors = { ...this.state.errors };
+
+    let isValidPassword = true;
+
+    if (password !== confirmPassword) {
+      isValidPassword = false;
+      errors.name = "Passwords do no match.";
+    }
+
+    if (isValidPassword) {
+      errors.name = "Valid password";
+    }
+    this.setState({ isValidPassword, errors });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.password === this.state.confirmPassword) {
+    if (this.state.isValidPassword) {
       this.props.signUp(this.state.email, this.state.password);
       this.props.history.push("/login");
     }
@@ -31,7 +51,8 @@ class SignUpPageContainer extends Component {
       handleSubmit={this.handleSubmit}
       loggedIn={this.props.loggedIn}
       userEmail={this.props.userEmail}
-      error={this.props.error}
+      errors={this.state.errors}
+      isValidPassword={this.state.isValidPassword}
     />;
   }
 }
@@ -43,9 +64,9 @@ const mapState = (state) => {
   };
 }
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, ownProps) => {
   return {
-    signUp: (email, password) => dispatch(signUpThunk(email, password))
+    signUp: (email, password) => dispatch(signUpThunk(email, password, ownProps))
   }
 }
 

@@ -40,8 +40,8 @@ const SignUpPageView = (props) => {
             required
           />
         </div>
-        {props.error && props.error.response && <div> {props.error.response.data} </div>}
-                <button className="btn btn-dark" type="submit">Sign Up!</button>
+        {props.isValidPassword ? <div></div> : <div style={{ color: "red", fontWeight: "bold" }}>{props.errors.name}</div>}
+        <button className="btn btn-dark" type="submit">Sign Up!</button>
       </form>
     </div>
   );

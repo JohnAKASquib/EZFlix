@@ -4,7 +4,7 @@ import axios from "axios";
 const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
 const LOGOUT = "LOGOUT";
-const FETCH_USER = "FETCH_USER";
+// const FETCH_USER = "FETCH_USER";
 
 // ACTION CREATORS
 const signUp = (user) => {
@@ -27,15 +27,15 @@ const logout = () => {
   };
 };
 
-const fetchUser = (user) => {
-  return {
-    type: FETCH_USER,
-    payload: user,
-  };
-};
+// const fetchUser = (user) => {
+//   return {
+//     type: FETCH_USER,
+//     payload: user,
+//   };
+// };
 
 // THUNKS
-export const signUpThunk = (email, password) => async (dispatch) => {
+export const signUpThunk = (email, password, ownProps) => async (dispatch) => {
   let results;
   try {
     results = axios.post(
@@ -49,12 +49,13 @@ export const signUpThunk = (email, password) => async (dispatch) => {
 
   try {
     dispatch(signUp(results.data));
+    ownProps.history.push("/login");
   } catch (error) {
     console.log(error);
   }
 };
 
-export const loginThunk = (email, password) => async (dispatch) => {
+export const loginThunk = (email, password, ownProps) => async (dispatch) => {
   let results;
   try {
     results = await axios.post(
@@ -63,12 +64,13 @@ export const loginThunk = (email, password) => async (dispatch) => {
       { withCredentials: true }
     );
   } catch (error) {
+    ownProps.history.push("/login");
     return dispatch(login({ error: error }));
   }
 
   try {
-    console.log(await results.data);
     dispatch(login(results.data));
+    ownProps.history.push("/");
   } catch (error) {
     console.log(error);
   }
