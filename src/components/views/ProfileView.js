@@ -55,6 +55,7 @@ const ProfileView = (props) => {
                     </div>
                     
             </div>
+            <img src={props.loggedInUser.imageUrl} alt={props.isLoggedIn.email} />
             <hr/>
 
             <h2 className="py-5">Your Favorite Movies:</h2>

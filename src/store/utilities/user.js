@@ -35,12 +35,12 @@ const logout = () => {
 // };
 
 // THUNKS
-export const signUpThunk = (email, password, ownProps) => async (dispatch) => {
+export const signUpThunk = (email, password, imageUrl, ownProps) => async (dispatch) => {
   let results;
   try {
     results = axios.post(
       "/auth/signup",
-      { email, password },
+      { email, password, imageUrl },
       { withCredentials: true }
     );
   } catch (error) {
