@@ -18,7 +18,7 @@ const HomePageView = (props) => {
           >
             <div className="card-header">
               <Link to={`/movies/${movie.id}`}>
-                <h3>{movie.title ? movie.title : movie.name}</h3>
+                <h3 className="text-warning">{movie.title ? movie.title : movie.name}</h3>
               </Link>
             </div>
             <div className="card-body">
