@@ -41,7 +41,6 @@ export const fetchAllMoviesThunk = () => (dispatch) => {
     .get("/api/movies")
     .then((res) => res.data)
     .then((movies) => {
-      console.log(movies);
       dispatch(fetchAllMovies(movies));
     })
     .catch((error) => console.log(error));
@@ -53,7 +52,6 @@ export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
     .get(`/api/movies/search/${searchTerm}`)
     .then((res) => res.data)
     .then((movies) => {
-      console.log(movies);
       dispatch(searchMovies(movies.results));
       ownProps.history.push("/search");
     })
@@ -66,7 +64,6 @@ export const byGenreThunk = (id, ownProps) => (dispatch) => {
     .get(`/api/movies/search/genre/${id}`)
     .then((res) => res.data)
     .then((movies) => {
-      console.log(movies);
       dispatch(byGenre(movies.results));
       ownProps.history.push("/search");
     })
@@ -79,7 +76,6 @@ export const searchByTermAndIdThunk = (term, id, ownProps) => (dispatch) => {
     .get(`/api/movies/search/genre/${id}/${term}`)
     .then((res) => res.data)
     .then((movies) => {
-      console.log(movies);
       dispatch(byGenreandTerm(movies.results));
       ownProps.history.push("/search");
     })

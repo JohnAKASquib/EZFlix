@@ -12,9 +12,9 @@ const ProfileView = (props) => {
     }
 
     if (props.favoriteMovies.length !== 0) {
-        props.favoriteMovies.map((movie) => {
-            listOfFavoriteMovies.push(movie);
-        })
+        props.favoriteMovies.map((movie) => (
+            listOfFavoriteMovies.push(movie)
+        ))
     }
 
     const date = props.loggedInUser.createdAt.toString().substring(0, 10);
@@ -35,6 +35,9 @@ const ProfileView = (props) => {
             >
                 <div className="float-right"> 
                     <h5>{props.loggedInUser.email}</h5>
+                </div>
+                <div>
+                    <button className="btn btn-danger" onClick={props.handleLogout}>Logout</button>
                 </div>
             </div>
 

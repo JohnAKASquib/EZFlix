@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { me, fetchFavoriteMoviesThunk, removeFavoriteMovieThunk } from "../../thunks";
+import { me, logoutThunk, fetchFavoriteMoviesThunk, removeFavoriteMovieThunk } from "../../thunks";
 import ProfileView from "../views/ProfileView";
 
 class ProfileContainer extends Component {
@@ -10,18 +10,22 @@ class ProfileContainer extends Component {
         }
     }
 
+    handleLogout = () => {
+        this.props.logout();
+    };
+
     handleSubmit = (movieID) => {
         this.props.removeFavoriteMovie(this.props.loggedInUser.id, movieID);
     }
 
     render() {
-        console.log(this.props.favoriteMovies);
         return (
             <ProfileView 
                 isLoggedIn={this.props.isLoggedIn}
                 loggedInUser={this.props.loggedInUser}
                 favoriteMovies={this.props.favoriteMovies}
                 handleSubmit={this.handleSubmit}
+                handleLogout={this.handleLogout}
             />
         )
     }
@@ -38,6 +42,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
     return {
         me: () => dispatch(me()),
+        logout: () => dispatch(logoutThunk()),
         fetchFavoriteMovies: (id) => dispatch(fetchFavoriteMoviesThunk(id)),
         removeFavoriteMovie: (userID, movieID) => dispatch(removeFavoriteMovieThunk(userID, movieID)),
     };
