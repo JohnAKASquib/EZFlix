@@ -31,6 +31,11 @@ class SignUpPageContainer extends Component {
       errors.name = "Passwords do no match.";
     }
 
+    if (password.length < 6 || confirmPassword.length < 6) {
+      isValidPassword = false;
+      errors.name = "Password must be at least 6 characters.";
+    }
+
     if (isValidPassword) {
       errors.name = "Valid password";
     }
