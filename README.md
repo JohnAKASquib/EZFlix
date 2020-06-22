@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Name] Client
 
-## Available Scripts
+[Name] is a full stack web application completed for the CUNY2X bootcamp. The client portion of the project was built with React, Redux, and Node.js.
 
-In the project directory, you can run:
+# Deployment
 
-### `npm start`
+[Link to the deployed website.](https://cuny-capstone.herokuapp.com/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Server
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Link to the server portion of the application.](https://github.com/MathewDavidov/capstone-project-server)
 
-### `npm test`
+# Run the App
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In the command line:
 
-### `npm run build`
+```shell
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Routes
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Home
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When you visit the home page, all the trending movies will load. On all pages, the navigation bar with load, displaying a link to Home and the ability to search by terms, by genre, or by both. If the user is logged in, extra links "Profile" and "Logout" will display. If the user is not logged in, "Login" and "Signup" links will display.
 
-### `npm run eject`
+### Signup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Users will be given the option to create an account with their emails, password, and an optional profile picture. Given the user has a valid email, the passwords match, and are at least 6 characters long, sign up will complete and redirect to the login page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Users will be able to log in with accounts previously created at this route.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Single Movie 
 
-## Learn More
+Users can click a movie to view more detailed information in a seperate view. If the user is logged-in, they will be able to press a button to add the movie to a list of their favorite movies.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Profile
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Users who are logged-in can view their profile page with their email, profile image, and a list of favorite movies. In this view, they are able to edit the list of movies by removing a movie from their favorites.
 
-### Code Splitting
+### Search
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+When users search for a movie using any of the three methods (search term, genre, or both), the user will be redirected to a search view that displays the results of their search. 
