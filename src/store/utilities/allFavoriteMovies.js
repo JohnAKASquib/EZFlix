@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const BASE_URL = "https://cuny-capstone-server.herokuapp.com";
+const BASE_URL = "https://ezflix-server.herokuapp.com";
 
 // ACTION TYPES
 const FETCH_FAVORITE_MOVIES = "FETCH_FAVORITE_MOVIES";
@@ -33,7 +33,7 @@ const removeFavoriteMovie = (movieID) => {
 // THUNKS
 export const fetchFavoriteMoviesThunk = (id) => (dispatch) => {
     return Axios
-        .get(`${BASE_URL}/api/users/${id}/movies`)
+        .get(`${BASE_URL}/api/users/${id}/movies`, { withCredentials: true })
         .then((res) => res.data)
         .then((movies) => {
             dispatch(fetchFavoriteMovies(movies));
@@ -43,7 +43,7 @@ export const fetchFavoriteMoviesThunk = (id) => (dispatch) => {
 
 export const addFavoriteMovieThunk = (movied, id) => (dispatch) => {
     return Axios
-        .post(`${BASE_URL}/api/users/favorite/${id}`)
+        .post(`${BASE_URL}/api/users/favorite/${id}`, { withCredentials: true })
         .then((movie) => {
             dispatch(addFavoriteMovie(movie));
         })
@@ -52,7 +52,7 @@ export const addFavoriteMovieThunk = (movied, id) => (dispatch) => {
 
 export const removeFavoriteMovieThunk = (userID, movieID) => (dispatch) => {
     return Axios
-        .delete(`${BASE_URL}/api/users/${userID}/movies/remove/${movieID}`)
+        .delete(`${BASE_URL}/api/users/${userID}/movies/remove/${movieID}`, { withCredentials: true })
         .then((res) => res.data)
         .then(() => dispatch(removeFavoriteMovie(movieID)))
         .catch((error) => console.log(error));
