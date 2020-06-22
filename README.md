@@ -1,10 +1,10 @@
-# [Name] Client
+# EZFlix Client
 
-[Name] is a full stack web application completed for the CUNY2X bootcamp. The client portion of the project was built with React, Redux, and Node.js.
+EZFlix is a full stack web application completed for the CUNY2X bootcamp. The client portion of the project was built with React, Redux, and Node.js. Developed by Alba Bell, Alvin Munar, John Stendardo, and Mathew Davidov.
 
 # Deployment
 
-[Link to the deployed website.](https://cuny-capstone.herokuapp.com/)
+[Link to the deployed website.](https://ezflix.netlify.app/)
 
 # Server
 
