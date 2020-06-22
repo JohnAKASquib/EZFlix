@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import MovieView from "../views/MovieView";
 import { connect } from "react-redux";
-import { fetchMovieThunk, addFavoriteMovieThunk, me } from "../../thunks";
+import { fetchMovieThunk, addFavoriteMovieThunk } from "../../thunks";
 
 class MovieContainer extends Component {
     componentDidMount() {
-        this.props.loadInitialData();
         this.props.fetchMovie(this.props.match.params.id);
     }
 
@@ -33,7 +32,6 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    loadInitialData: () => dispatch(me()),
     fetchMovie: (id) => dispatch(fetchMovieThunk(id)),
     addFavoriteMovie: (movie, id) => dispatch(addFavoriteMovieThunk(movie, id)),
   };
