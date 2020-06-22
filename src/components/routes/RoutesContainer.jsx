@@ -25,4 +25,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default RoutesContainer;
+export default connect(mapState, mapDispatch)(RoutesContainer);
