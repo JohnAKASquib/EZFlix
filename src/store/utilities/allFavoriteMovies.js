@@ -43,7 +43,7 @@ export const fetchFavoriteMoviesThunk = (id) => (dispatch) => {
 
 export const addFavoriteMovieThunk = (movied, id) => (dispatch) => {
     return Axios
-        .post(`${BASE_URL}/api/users/favorite/${id}`, { withCredentials: true })
+        .post(`${BASE_URL}/api/users/favorite/${id}`, {}, { withCredentials: true })
         .then((movie) => {
             dispatch(addFavoriteMovie(movie));
         })
@@ -52,7 +52,7 @@ export const addFavoriteMovieThunk = (movied, id) => (dispatch) => {
 
 export const removeFavoriteMovieThunk = (userID, movieID) => (dispatch) => {
     return Axios
-        .delete(`${BASE_URL}/api/users/${userID}/movies/remove/${movieID}`, { withCredentials: true })
+        .delete(`${BASE_URL}/api/users/${userID}/movies/remove/${movieID}`, {}, { withCredentials: true })
         .then((res) => res.data)
         .then(() => dispatch(removeFavoriteMovie(movieID)))
         .catch((error) => console.log(error));
