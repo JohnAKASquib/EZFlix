@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const BASE_URL = "https://cuny-capstone-server.herokuapp.com";
+
 // ACTION TYPES
 const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
@@ -39,7 +41,7 @@ export const signUpThunk = (email, password, imageUrl, ownProps) => async (dispa
   let results;
   try {
     results = axios.post(
-      "/auth/signup",
+      `${BASE_URL}/auth/signup`,
       { email, password, imageUrl },
       { withCredentials: true }
     );
@@ -59,7 +61,7 @@ export const loginThunk = (email, password, ownProps) => async (dispatch) => {
   let results;
   try {
     results = await axios.post(
-      "/auth/login",
+      `${BASE_URL}/auth/login`,
       { email, password },
       { withCredentials: true }
     );
@@ -78,7 +80,7 @@ export const loginThunk = (email, password, ownProps) => async (dispatch) => {
 
 export const logoutThunk = () => async (dispatch) => {
   try {
-    await axios.delete("/auth/logout", { withCredentials: true });
+    await axios.delete(`${BASE_URL}/auth/logout`, { withCredentials: true });
     dispatch(logout());
   } catch (error) {
     console.error(error);
@@ -87,7 +89,7 @@ export const logoutThunk = () => async (dispatch) => {
 
 export const me = () => async (dispatch) => {
   try {
-    const res = await axios.get("/auth/me", { withCredentials: true });
+    const res = await axios.get(`${BASE_URL}/auth/me`, { withCredentials: true });
     dispatch(login(res.data || {}));
   } catch (err) {
     console.error(err);

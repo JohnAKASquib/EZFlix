@@ -3,6 +3,8 @@ import axios from "axios";
 // Action Types
 const FETCH_MOVIE = "FETCH_MOVIE";
 
+const BASE_URL = "https://cuny-capstone-server.herokuapp.com";
+
 // Action Creators
 
 const fetchMovie = (movie) => {
@@ -15,7 +17,7 @@ const fetchMovie = (movie) => {
 // Thunk Creators
 export const fetchMovieThunk = (id) => (dispatch) => {
   return axios
-    .get(`/api/movies/${id}`)
+    .get(`${BASE_URL}/api/movies/${id}`)
     .then((res) => res.data)
     .then((movie) => dispatch(fetchMovie(movie)))
     .catch((err) => console.log(err));

@@ -1,5 +1,5 @@
 {
-  "name": "capstone-client",
+  "name": "ezflix",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,7 +25,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://cuny-capstone-server.herokuapp.com/",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "proxy": "https://ezflix-server.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },

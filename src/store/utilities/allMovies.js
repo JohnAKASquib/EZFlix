@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const BASE_URL = "https://cuny-capstone-server.herokuapp.com";
+
 // ACTION TYPES
 const FETCH_ALL_MOVIES = "FETCH_ALL_MOVIES";
 const SEARCH_MOVIES = "SEARCH_MOVIES";
@@ -38,7 +40,7 @@ const byGenreandTerm = (movies) => {
 // THUNKS
 export const fetchAllMoviesThunk = () => (dispatch) => {
   return axios
-    .get("/api/movies")
+    .get(`${BASE_URL}/api/movies`)
     .then((res) => res.data)
     .then((movies) => {
       dispatch(fetchAllMovies(movies));
@@ -49,7 +51,7 @@ export const fetchAllMoviesThunk = () => (dispatch) => {
 export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
   console.log(searchTerm);
   return axios
-    .get(`/api/movies/search/${searchTerm}`)
+    .get(`${BASE_URL}/api/movies/search/${searchTerm}`)
     .then((res) => res.data)
     .then((movies) => {
       dispatch(searchMovies(movies.results));
@@ -61,7 +63,7 @@ export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
 export const byGenreThunk = (id, ownProps) => (dispatch) => {
   console.log(id);
   return axios
-    .get(`/api/movies/search/genre/${id}`)
+    .get(`${BASE_URL}/api/movies/search/genre/${id}`)
     .then((res) => res.data)
     .then((movies) => {
       dispatch(byGenre(movies.results));
@@ -73,7 +75,7 @@ export const byGenreThunk = (id, ownProps) => (dispatch) => {
 export const searchByTermAndIdThunk = (term, id, ownProps) => (dispatch) => {
   console.log(term, id);
   return axios
-    .get(`/api/movies/search/genre/${id}/${term}`)
+    .get(`${BASE_URL}/api/movies/search/genre/${id}/${term}`)
     .then((res) => res.data)
     .then((movies) => {
       dispatch(byGenreandTerm(movies.results));
