@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://cuny-capstone-server.herokuapp.com";
+const BASE_URL = "https://ezflix-server.herokuapp.com";
 
 // ACTION TYPES
 const SIGN_UP = "SIGN_UP";
