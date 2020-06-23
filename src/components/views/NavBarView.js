@@ -3,6 +3,7 @@ import "./styles/NavBarView.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import SearchBarContainer from "../containers/SearchBarContainer";
+import PropTypes from "prop-types";
 
 const NavBarView = (props) => {
   let buttons;
@@ -66,6 +67,11 @@ const NavBarView = (props) => {
       </div>
     </nav>
   );
+};
+
+NavBarView.propTypes = {
+  handleLogout: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default NavBarView;

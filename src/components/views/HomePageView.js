@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/HomePageView.css"
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const HomePageView = (props) => {
   return (
@@ -40,6 +41,10 @@ const HomePageView = (props) => {
       </div>
     </div>
   );
+};
+
+HomePageView.propTypes = {
+  allMovies: PropTypes.array.isRequired,
 };
 
 export default HomePageView;

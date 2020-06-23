@@ -1,11 +1,11 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./styles/LoginPageView.css";
+import PropTypes from "prop-types";
 
 const SignUpPageView = (props) => {
   return (
     <div className="page p-5">
-      {props.loggedIn ? `The current logged in user is: ${props.userEmail}` : ""}
       <form className="center" onSubmit={props.handleSubmit}>
         <p style={{ color: "red" }}>* Required</p>
         <div className="form pb-5">
@@ -54,6 +54,12 @@ const SignUpPageView = (props) => {
       </form>
     </div>
   );
+};
+
+SignUpPageView.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  isValidPassword: PropTypes.bool.isRequired,
 };
 
 export default SignUpPageView;
