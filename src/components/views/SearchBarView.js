@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import PropTypes from "prop-types";
 
 const SearchBarView = (props) => {
   return (
@@ -41,6 +42,12 @@ const SearchBarView = (props) => {
       </form>
     </div>
   );
+};
+
+SearchBarView.propTypes = {
+  onGenreChange: PropTypes.func.isRequired,
+  onTermChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SearchBarView;

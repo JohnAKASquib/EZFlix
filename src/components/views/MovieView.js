@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/MovieView.css";
+import PropTypes from "prop-types";
 
 const MovieView = (props) => {
   let favoriteButton;
@@ -40,5 +41,10 @@ const MovieView = (props) => {
     </div>  
   );
 }
+
+MovieView.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 
 export default MovieView;

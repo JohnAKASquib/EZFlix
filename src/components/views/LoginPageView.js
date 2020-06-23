@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/LoginPageView.css";
 import 'bootstrap/dist/css/bootstrap.css';
+import PropTypes from "prop-types";
 
 const LoginPageView = (props) => {
   return (
@@ -23,6 +24,11 @@ const LoginPageView = (props) => {
       </form>
     </div>
   );
+};
+
+LoginPageView.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default LoginPageView;

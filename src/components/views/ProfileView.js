@@ -3,6 +3,7 @@ import "./styles/NavBarView.css";
 import "./styles/ProfileView.css";
 import { Link, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import PropTypes from "prop-types";
 
 const ProfileView = (props) => {
     let listOfFavoriteMovies = [];
@@ -107,6 +108,12 @@ const ProfileView = (props) => {
             </div>
         </div>
     );
+};
+
+ProfileView.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    handleLogout: PropTypes.func.isRequired,
+    isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default ProfileView;

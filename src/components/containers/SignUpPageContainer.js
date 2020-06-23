@@ -55,7 +55,7 @@ class SignUpPageContainer extends Component {
     return <SignUpPageView 
       handleChange={this.handleChange}
       handleSubmit={this.handleSubmit}
-      loggedIn={this.props.loggedIn}
+      isLoggedIn={this.props.isLoggedIn}
       userEmail={this.props.userEmail}
       errors={this.state.errors}
       isValidPassword={this.state.isValidPassword}
