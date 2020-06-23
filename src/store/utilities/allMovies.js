@@ -49,7 +49,6 @@ export const fetchAllMoviesThunk = () => (dispatch) => {
 };
 
 export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
-  console.log(searchTerm);
   return axios
     .get(`${BASE_URL}/api/movies/search/${searchTerm}`, { withCredentials: true })
     .then((res) => res.data)
@@ -61,7 +60,6 @@ export const searchForMoviesThunk = (searchTerm, ownProps) => (dispatch) => {
 };
 
 export const byGenreThunk = (id, ownProps) => (dispatch) => {
-  console.log(id);
   return axios
     .get(`${BASE_URL}/api/movies/search/genre/${id}`, { withCredentials: true })
     .then((res) => res.data)
@@ -73,7 +71,6 @@ export const byGenreThunk = (id, ownProps) => (dispatch) => {
 };
 
 export const searchByTermAndIdThunk = (term, id, ownProps) => (dispatch) => {
-  console.log(term, id);
   return axios
     .get(`${BASE_URL}/api/movies/search/genre/${id}/${term}`, { withCredentials: true })
     .then((res) => res.data)

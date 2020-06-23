@@ -9,12 +9,7 @@ class MovieContainer extends Component {
     }
 
     handleSubmit = (id) => {
-        // if (this.props.isLoggedIn) {
-          console.log(this.props.isLoggedIn + ", submit " + id);
-          this.props.addFavoriteMovie(this.props.movie, id);
-        // } else {
-        //   console.log("not logged in." + this.props.isLoggedIn);
-        // }
+      this.props.addFavoriteMovie(id);
     }
 
     render() {
@@ -33,7 +28,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchMovie: (id) => dispatch(fetchMovieThunk(id)),
-    addFavoriteMovie: (movie, id) => dispatch(addFavoriteMovieThunk(movie, id)),
+    addFavoriteMovie: (id) => dispatch(addFavoriteMovieThunk(id)),
   };
 };
 

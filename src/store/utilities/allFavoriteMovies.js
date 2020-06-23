@@ -41,7 +41,7 @@ export const fetchFavoriteMoviesThunk = (id) => (dispatch) => {
         .catch((error) => console.log(error));
 };
 
-export const addFavoriteMovieThunk = (movied, id) => (dispatch) => {
+export const addFavoriteMovieThunk = (id) => (dispatch) => {
     return Axios
         .post(`${BASE_URL}/api/users/favorite/${id}`, {}, { withCredentials: true })
         .then((movie) => {
