@@ -19,14 +19,9 @@ class SearchBarContainer extends Component {
 
   handleGenreChange = (e) => {
     //this is all that was needed :'(
-    this.setState({ genreId: e.target.value }, () => {
-      console.log(this.state.genreId);
-    });
+    this.setState({ genreId: e.target.value });
   };
   handleTermChange = (e) => {
-    console.log(
-      "inside of handle term change the search term is " + e.target.value
-    );
     const search = e.target.value.trim();
     this.setState({
       searchTerm: search,
@@ -37,7 +32,6 @@ class SearchBarContainer extends Component {
     const genre = Number(this.state.genreId);
 
     if (genre !== 0 && this.state.searchTerm !== "") {
-      console.log("search by genre and search term");
       this.props.getByGenreAndTerm(this.state.searchTerm, this.state.genreId);
     } else if (genre !== 0) {
       this.props.getByGenre(this.state.genreId);
