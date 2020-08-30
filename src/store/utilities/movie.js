@@ -1,12 +1,11 @@
 import axios from "axios";
 
-// Action Types
-const FETCH_MOVIE = "FETCH_MOVIE";
-
 const BASE_URL = "https://ezflix-server.herokuapp.com";
 
-// Action Creators
+// ACTION TYPES
+const FETCH_MOVIE = "FETCH_MOVIE";
 
+// ACTION CREATORS
 const fetchMovie = (movie) => {
   return {
     type: FETCH_MOVIE,
@@ -14,7 +13,7 @@ const fetchMovie = (movie) => {
   };
 };
 
-// Thunk Creators
+// THUNKS
 export const fetchMovieThunk = (id) => (dispatch) => {
   return axios
     .get(`${BASE_URL}/api/movies/${id}`, { withCredentials: true })
@@ -23,7 +22,7 @@ export const fetchMovieThunk = (id) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-// Reducer
+// REDUCERS
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case FETCH_MOVIE:

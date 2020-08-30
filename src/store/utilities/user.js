@@ -6,7 +6,6 @@ const BASE_URL = "https://ezflix-server.herokuapp.com";
 const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
 const LOGOUT = "LOGOUT";
-// const FETCH_USER = "FETCH_USER";
 
 // ACTION CREATORS
 const signUp = (user) => {
@@ -29,15 +28,10 @@ const logout = () => {
   };
 };
 
-// const fetchUser = (user) => {
-//   return {
-//     type: FETCH_USER,
-//     payload: user,
-//   };
-// };
-
 // THUNKS
-export const signUpThunk = (email, password, imageUrl, ownProps) => async (dispatch) => {
+export const signUpThunk = (email, password, imageUrl, ownProps) => async (
+  dispatch
+) => {
   let results;
   try {
     results = axios.post(
@@ -89,7 +83,9 @@ export const logoutThunk = () => async (dispatch) => {
 
 export const me = () => async (dispatch) => {
   try {
-    const res = await axios.get(`${BASE_URL}/auth/me`, { withCredentials: true });
+    const res = await axios.get(`${BASE_URL}/auth/me`, {
+      withCredentials: true,
+    });
     dispatch(login(res.data || {}));
   } catch (err) {
     console.error(err);
