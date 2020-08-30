@@ -4,12 +4,8 @@ import PropTypes from "prop-types";
 
 const SearchBarView = (props) => {
   return (
-    <div
-      className="navbar-collapse float-right"
-      id="navbarSupportedContent"
-    >
+    <div className="navbar-collapse float-right" id="navbarSupportedContent">
       <div className=" form-group">
-        
         <select
           className="form-control"
           id="exampleFormControlSelect1"

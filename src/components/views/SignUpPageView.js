@@ -1,5 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import "./styles/LoginPageView.css";
 import PropTypes from "prop-types";
 
@@ -18,7 +18,9 @@ const SignUpPageView = (props) => {
             required
           />
         </div>
-        <div className="text-warning">Password must be at least 6 characters long!</div>
+        <div className="text-warning">
+          Password must be at least 6 characters long!
+        </div>
         <div className="form pb-4">
           Password: <span style={{ color: "red" }}>*</span>
           <input
@@ -28,7 +30,6 @@ const SignUpPageView = (props) => {
             onChange={props.handleChange}
             required
           />
-          
         </div>
         <div className="form pb-4">
           Confirm Password: <span style={{ color: "red" }}>*</span>
@@ -49,8 +50,16 @@ const SignUpPageView = (props) => {
             onChange={props.handleChange}
           />
         </div>
-        {props.isValidPassword ? <div></div> : <div style={{ color: "red", fontWeight: "bold" }}>{props.errors.name}</div>}
-        <button className="btn btn-dark" type="submit">Sign Up!</button>
+        {props.isValidPassword ? (
+          <div></div>
+        ) : (
+          <div style={{ color: "red", fontWeight: "bold" }}>
+            {props.errors.name}
+          </div>
+        )}
+        <button className="btn btn-dark" type="submit">
+          Sign Up!
+        </button>
       </form>
     </div>
   );
