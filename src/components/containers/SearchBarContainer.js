@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchBarView from "../views/SearchBarView";
+import { SearchBarView } from "../views";
 import { connect } from "react-redux";
 import {
   searchForMoviesThunk,
@@ -21,12 +21,14 @@ class SearchBarContainer extends Component {
     //this is all that was needed :'(
     this.setState({ genreId: e.target.value });
   };
+
   handleTermChange = (e) => {
     const search = e.target.value.trim();
     this.setState({
       searchTerm: search,
     });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const genre = Number(this.state.genreId);
@@ -57,7 +59,6 @@ const mapState = (state) => {
   };
 };
 
-//map dispatch to props
 const mapDispatch = (dispatch, ownProps) => {
   return {
     searchForMovies: (searchTerm) =>

@@ -1,28 +1,29 @@
-.container1{
-    display: flex;
-    justify-content: center;
-    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+.container1 {
+  display: flex;
+  justify-content: center;
+  background: url("https://source.unsplash.com/twukN12EN7c/1920x1080") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.card1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: rgba(255, 250, 250, 0.836);
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background: url("https://source.unsplash.com/twukN12EN7c/1920x1080")
+      no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-.card1 {
-    background-color: rgba(0, 0, 0, 0.5);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    color: rgba(255, 250, 250, 0.836);
-}
-
-@media only screen and (max-width: 1000px) {
-    body {
-        background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
-        padding-bottom: 50px;
-    }
+    padding-bottom: 50px;
   }
-
+}

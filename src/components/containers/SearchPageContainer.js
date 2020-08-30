@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchPageView from "../views/SearchPageView";
+import { SearchPageView } from "../views";
 import { connect } from "react-redux";
 import { fetchAllMoviesThunk } from "../../thunks";
 
