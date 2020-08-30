@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBarView from "../views/NavBarView";
+import { NavBarView } from "../views";
 import { connect } from "react-redux";
 import { logoutThunk, me, fetchAllMoviesThunk } from "../../thunks";
 
@@ -8,7 +8,7 @@ class NavBarContainer extends Component {
     this.props.logout();
   };
 
-  //if home button is clicked this will hopefully reload trending movies
+  // If home button is clicked this will hopefully reload trending movies
   homeClicked = () => {
     this.props.reloadHome();
   };

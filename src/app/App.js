@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import NavBarContainer from "../components/containers/NavBarContainer";
+import { NavBarContainer } from "../components/containers";
 import RoutesContainer from "../components/routes/RoutesContainer";
 
-function App () {
+function App() {
   return (
     <div>
       <NavBarContainer />
