@@ -1,13 +1,13 @@
 body {
-  background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  background: url("https://source.unsplash.com/twukN12EN7c/1920x1080") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
-@media (min-width:1000px){
-
+@media (min-width: 1000px) {
 }
 
 .center {
@@ -47,25 +47,27 @@ body {
 
 @media screen and (max-width: 1000px) {
   * {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
+
   .page1 {
-      background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;
-      -o-background-size: cover;     
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      justify-self: stretch;
-      overflow: auto;
-      display: flex;
-      
+    background: url("https://source.unsplash.com/twukN12EN7c/1920x1080")
+      no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: stretch;
+    overflow: auto;
+    display: flex;
   }
-  .center{
+
+  .center {
     display: grid;
     justify-content: center;
     width: fit-content;

@@ -7,7 +7,7 @@ class RoutesContainer extends Component {
   componentDidMount() {
     this.props.loadInitialData();
   }
-  
+
   render() {
     return <RoutesView />;
   }
@@ -15,7 +15,7 @@ class RoutesContainer extends Component {
 
 const mapState = (state) => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
   };
 };
 

@@ -1,16 +1,14 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-// {*/import
-//   HomePageContainer,
-//   LoginPageContainer,
-//   SignUpPageContainer,
-// from "../containers";*/}
-import HomePageContainer from "../containers/HomePageContainer";
-import LoginPageContainer from "../containers/LoginPageContainer";
-import SignUpPageContainer from "../containers/SignUpPageContainer";
-import MovieContainer from "../containers/MovieContainer";
-import ProfileContainer from "../containers/ProfileContainer";
-import SearchPageContainer from "../containers/SearchPageContainer";
+import {
+  HomePageContainer,
+  LoginPageContainer,
+  SignUpPageContainer,
+  ProfileContainer,
+  SearchPageContainer,
+  MovieContainer,
+} from "../containers";
+
 const RoutesView = () => {
   return (
     <Switch>

@@ -1,27 +1,33 @@
 import React, { Component } from "react";
-import MovieView from "../views/MovieView";
+import { MovieView } from "../views";
 import { connect } from "react-redux";
 import { fetchMovieThunk, addFavoriteMovieThunk } from "../../thunks";
 
 class MovieContainer extends Component {
-    componentDidMount() {
-        this.props.fetchMovie(this.props.match.params.id);
-    }
+  componentDidMount() {
+    this.props.fetchMovie(this.props.match.params.id);
+  }
 
-    handleSubmit = (id) => {
-      this.props.addFavoriteMovie(id);
-    }
+  handleSubmit = (id) => {
+    this.props.addFavoriteMovie(id);
+  };
 
-    render() {
-        return <MovieView movie={this.props.movie} handleSubmit={this.handleSubmit} isLoggedIn={this.props.isLoggedIn} />;
-    }
+  render() {
+    return (
+      <MovieView
+        movie={this.props.movie}
+        handleSubmit={this.handleSubmit}
+        isLoggedIn={this.props.isLoggedIn}
+      />
+    );
+  }
 }
 
 // map state to props
 const mapState = (state) => {
   return {
     movie: state.movie,
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
   };
 };
 

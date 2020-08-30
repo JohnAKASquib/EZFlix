@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LoginPageView from "../views/LoginPageView";
-import { connect } from"react-redux";
+import { LoginPageView } from "../views";
+import { connect } from "react-redux";
 import { loginThunk } from "../../thunks";
 
 class LoginPageContainer extends Component {

@@ -6,7 +6,12 @@ const MovieView = (props) => {
   let favoriteButton;
   if (props.isLoggedIn) {
     favoriteButton = (
-      <button className="btn btn-primary" onClick={() => props.handleSubmit(props.movie.id)}>Add to Favorites</button>
+      <button
+        className="btn btn-primary"
+        onClick={() => props.handleSubmit(props.movie.id)}
+      >
+        Add to Favorites
+      </button>
     );
   }
   return (
@@ -25,22 +30,26 @@ const MovieView = (props) => {
           <img
             src={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`}
             width="350px"
-            alt={props.movie.title}                        
-          /> 
+            alt={props.movie.title}
+          />
           <h3>Voters</h3>
           <p>{props.movie.vote_count}</p>
           <h3>Voter's Rating</h3>
           <p>{props.movie.vote_average}</p>
           <p>{props.movie.overview}</p>
-          <div className="card-footer1 text-muted">           
+          <div className="card-footer1 text-muted">
             <h2>Release Date</h2>
-            <p>{props.movie.release_date ? props.movie.release_date : props.movie.first_air_date}</p>
+            <p>
+              {props.movie.release_date
+                ? props.movie.release_date
+                : props.movie.first_air_date}
+            </p>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   );
-}
+};
 
 MovieView.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
